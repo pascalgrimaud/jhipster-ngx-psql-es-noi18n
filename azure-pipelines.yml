@@ -22,13 +22,23 @@ jobs:
   #----------------------------------------------------------------------
   # Tests
   #----------------------------------------------------------------------
-  - script: npm install
-    displayName: 'INSTALL: launch npm install'
-  - script: |
-      chmod +x mvnw
-      ./mvnw clean test
-    displayName: 'TESTS: backend'
-  - script: npm test -- -u
-    displayName: 'TESTS: frontend'
+  # - script: npm install
+  #   displayName: 'INSTALL: launch npm install'
+  - script: chmod +x mvnw
+    displayName: 'INSTALL: chmod mvnw'
+  # - script: ./mvnw clean test
+  #   displayName: 'TESTS: backend'
+  # - script: npm test -- -u
+  #   displayName: 'TESTS: frontend'
   - script: ./mvnw verify -Pprod -DskipTests
     displayName: 'TESTS: packaging'
+  - script: |
+      docker-compose -f src/main/docker/elasticsearch.yml up -d
+      docker-compose -f src/main/docker/postgresql.yml up -d
+    displayName: 'TESTS: start services'
+  - script: |
+      java -jar target/*.war --spring.profiles.active=prod &
+      sleep 60
+    displayName: 'TESTS: start app'
+  - script: npm run e2e
+    displayName: 'TESTS: e2e'
