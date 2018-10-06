@@ -22,14 +22,14 @@ jobs:
   #----------------------------------------------------------------------
   # Tests
   #----------------------------------------------------------------------
-  # - script: npm install
-  #   displayName: 'INSTALL: launch npm install'
+  - script: npm install
+    displayName: 'INSTALL: launch npm install'
   - script: chmod +x mvnw
     displayName: 'INSTALL: chmod mvnw'
-  # - script: ./mvnw clean test
-  #   displayName: 'TESTS: backend'
-  # - script: npm test -- -u
-  #   displayName: 'TESTS: frontend'
+  - script: ./mvnw clean test
+    displayName: 'TESTS: backend'
+  - script: npm test -- -u
+    displayName: 'TESTS: frontend'
   - script: ./mvnw verify -Pprod -DskipTests
     displayName: 'TESTS: packaging'
   - script: |
