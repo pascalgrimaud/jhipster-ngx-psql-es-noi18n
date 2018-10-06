@@ -1,0 +1,198 @@
+<div>
+    <h2 id="page-heading">
+        <span>Field Test Pager Entities</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-field-test-pager-entity" [routerLink]="['/field-test-pager-entity/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down" >
+            Create new Field Test Pager Entity
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Query">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="fieldTestPagerEntities">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stringJade"><span>String Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stringRequiredJade"><span>String Required Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stringMinlengthJade"><span>String Minlength Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stringMaxlengthJade"><span>String Maxlength Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stringPatternJade"><span>String Pattern Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="integerJade"><span>Integer Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="integerRequiredJade"><span>Integer Required Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="integerMinJade"><span>Integer Min Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="integerMaxJade"><span>Integer Max Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="longJade"><span>Long Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="longRequiredJade"><span>Long Required Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="longMinJade"><span>Long Min Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="longMaxJade"><span>Long Max Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="floatJade"><span>Float Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="floatRequiredJade"><span>Float Required Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="floatMinJade"><span>Float Min Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="floatMaxJade"><span>Float Max Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="doubleRequiredJade"><span>Double Required Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="doubleMinJade"><span>Double Min Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="doubleMaxJade"><span>Double Max Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="bigDecimalRequiredJade"><span>Big Decimal Required Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="bigDecimalMinJade"><span>Big Decimal Min Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="bigDecimalMaxJade"><span>Big Decimal Max Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="localDateJade"><span>Local Date Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="localDateRequiredJade"><span>Local Date Required Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="instantJade"><span>Instant Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="instanteRequiredJade"><span>Instante Required Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="zonedDateTimeJade"><span>Zoned Date Time Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="zonedDateTimeRequiredJade"><span>Zoned Date Time Required Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="booleanJade"><span>Boolean Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="booleanRequiredJade"><span>Boolean Required Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="enumJade"><span>Enum Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="enumRequiredJade"><span>Enum Required Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="byteImageJade"><span>Byte Image Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="byteImageRequiredJade"><span>Byte Image Required Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="byteImageMinbytesJade"><span>Byte Image Minbytes Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="byteImageMaxbytesJade"><span>Byte Image Maxbytes Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="byteAnyJade"><span>Byte Any Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="byteAnyRequiredJade"><span>Byte Any Required Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="byteAnyMinbytesJade"><span>Byte Any Minbytes Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="byteAnyMaxbytesJade"><span>Byte Any Maxbytes Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="byteTextJade"><span>Byte Text Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="byteTextRequiredJade"><span>Byte Text Required Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="byteTextMinbytesJade"><span>Byte Text Minbytes Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="byteTextMaxbytesJade"><span>Byte Text Maxbytes Jade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let fieldTestPagerEntity of fieldTestPagerEntities ;trackBy: trackId">
+                <td><a [routerLink]="['/field-test-pager-entity', fieldTestPagerEntity.id, 'view' ]">{{fieldTestPagerEntity.id}}</a></td>
+                <td>{{fieldTestPagerEntity.stringJade}}</td>
+                <td>{{fieldTestPagerEntity.stringRequiredJade}}</td>
+                <td>{{fieldTestPagerEntity.stringMinlengthJade}}</td>
+                <td>{{fieldTestPagerEntity.stringMaxlengthJade}}</td>
+                <td>{{fieldTestPagerEntity.stringPatternJade}}</td>
+                <td>{{fieldTestPagerEntity.integerJade}}</td>
+                <td>{{fieldTestPagerEntity.integerRequiredJade}}</td>
+                <td>{{fieldTestPagerEntity.integerMinJade}}</td>
+                <td>{{fieldTestPagerEntity.integerMaxJade}}</td>
+                <td>{{fieldTestPagerEntity.longJade}}</td>
+                <td>{{fieldTestPagerEntity.longRequiredJade}}</td>
+                <td>{{fieldTestPagerEntity.longMinJade}}</td>
+                <td>{{fieldTestPagerEntity.longMaxJade}}</td>
+                <td>{{fieldTestPagerEntity.floatJade}}</td>
+                <td>{{fieldTestPagerEntity.floatRequiredJade}}</td>
+                <td>{{fieldTestPagerEntity.floatMinJade}}</td>
+                <td>{{fieldTestPagerEntity.floatMaxJade}}</td>
+                <td>{{fieldTestPagerEntity.doubleRequiredJade}}</td>
+                <td>{{fieldTestPagerEntity.doubleMinJade}}</td>
+                <td>{{fieldTestPagerEntity.doubleMaxJade}}</td>
+                <td>{{fieldTestPagerEntity.bigDecimalRequiredJade}}</td>
+                <td>{{fieldTestPagerEntity.bigDecimalMinJade}}</td>
+                <td>{{fieldTestPagerEntity.bigDecimalMaxJade}}</td>
+                <td>{{fieldTestPagerEntity.localDateJade | date:'mediumDate'}}</td>
+                <td>{{fieldTestPagerEntity.localDateRequiredJade | date:'mediumDate'}}</td>
+                <td>{{fieldTestPagerEntity.instantJade | date:'medium'}}</td>
+                <td>{{fieldTestPagerEntity.instanteRequiredJade | date:'medium'}}</td>
+                <td>{{fieldTestPagerEntity.zonedDateTimeJade | date:'medium'}}</td>
+                <td>{{fieldTestPagerEntity.zonedDateTimeRequiredJade | date:'medium'}}</td>
+                <td>{{fieldTestPagerEntity.booleanJade}}</td>
+                <td>{{fieldTestPagerEntity.booleanRequiredJade}}</td>
+                <td>{{fieldTestPagerEntity.enumJade}}</td>
+                <td>{{fieldTestPagerEntity.enumRequiredJade}}</td>
+                <td>
+                    <a *ngIf="fieldTestPagerEntity.byteImageJade" (click)="openFile(fieldTestPagerEntity.byteImageJadeContentType, fieldTestPagerEntity.byteImageJade)">
+                        <img [src]="'data:' + fieldTestPagerEntity.byteImageJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageJade" style="max-height: 30px;" alt="fieldTestPagerEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestPagerEntity.byteImageJade">{{fieldTestPagerEntity.byteImageJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageJade)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPagerEntity.byteImageRequiredJade" (click)="openFile(fieldTestPagerEntity.byteImageRequiredJadeContentType, fieldTestPagerEntity.byteImageRequiredJade)">
+                        <img [src]="'data:' + fieldTestPagerEntity.byteImageRequiredJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageRequiredJade" style="max-height: 30px;" alt="fieldTestPagerEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestPagerEntity.byteImageRequiredJade">{{fieldTestPagerEntity.byteImageRequiredJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageRequiredJade)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPagerEntity.byteImageMinbytesJade" (click)="openFile(fieldTestPagerEntity.byteImageMinbytesJadeContentType, fieldTestPagerEntity.byteImageMinbytesJade)">
+                        <img [src]="'data:' + fieldTestPagerEntity.byteImageMinbytesJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageMinbytesJade" style="max-height: 30px;" alt="fieldTestPagerEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestPagerEntity.byteImageMinbytesJade">{{fieldTestPagerEntity.byteImageMinbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageMinbytesJade)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPagerEntity.byteImageMaxbytesJade" (click)="openFile(fieldTestPagerEntity.byteImageMaxbytesJadeContentType, fieldTestPagerEntity.byteImageMaxbytesJade)">
+                        <img [src]="'data:' + fieldTestPagerEntity.byteImageMaxbytesJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageMaxbytesJade" style="max-height: 30px;" alt="fieldTestPagerEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestPagerEntity.byteImageMaxbytesJade">{{fieldTestPagerEntity.byteImageMaxbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageMaxbytesJade)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPagerEntity.byteAnyJade" (click)="openFile(fieldTestPagerEntity.byteAnyJadeContentType, fieldTestPagerEntity.byteAnyJade)">open</a>
+                    <span *ngIf="fieldTestPagerEntity.byteAnyJade">{{fieldTestPagerEntity.byteAnyJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyJade)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPagerEntity.byteAnyRequiredJade" (click)="openFile(fieldTestPagerEntity.byteAnyRequiredJadeContentType, fieldTestPagerEntity.byteAnyRequiredJade)">open</a>
+                    <span *ngIf="fieldTestPagerEntity.byteAnyRequiredJade">{{fieldTestPagerEntity.byteAnyRequiredJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyRequiredJade)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPagerEntity.byteAnyMinbytesJade" (click)="openFile(fieldTestPagerEntity.byteAnyMinbytesJadeContentType, fieldTestPagerEntity.byteAnyMinbytesJade)">open</a>
+                    <span *ngIf="fieldTestPagerEntity.byteAnyMinbytesJade">{{fieldTestPagerEntity.byteAnyMinbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyMinbytesJade)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestPagerEntity.byteAnyMaxbytesJade" (click)="openFile(fieldTestPagerEntity.byteAnyMaxbytesJadeContentType, fieldTestPagerEntity.byteAnyMaxbytesJade)">open</a>
+                    <span *ngIf="fieldTestPagerEntity.byteAnyMaxbytesJade">{{fieldTestPagerEntity.byteAnyMaxbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyMaxbytesJade)}}</span>
+                </td>
+                <td>{{fieldTestPagerEntity.byteTextJade}}</td>
+                <td>{{fieldTestPagerEntity.byteTextRequiredJade}}</td>
+                <td>{{fieldTestPagerEntity.byteTextMinbytesJade}}</td>
+                <td>{{fieldTestPagerEntity.byteTextMaxbytesJade}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/field-test-pager-entity', fieldTestPagerEntity.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/field-test-pager-entity', fieldTestPagerEntity.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'field-test-pager-entity/'+ fieldTestPagerEntity.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Pager is not implemented yet, so this is normal pagination instead -->
+    <div *ngIf="fieldTestPagerEntities && fieldTestPagerEntities.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

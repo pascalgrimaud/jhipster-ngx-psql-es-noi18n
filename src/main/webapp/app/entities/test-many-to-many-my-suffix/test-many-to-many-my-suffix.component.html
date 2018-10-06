@@ -1,0 +1,115 @@
+<div>
+    <h2 id="page-heading">
+        <span>Test Many To Manies</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-test-many-to-many-my-suffix" [routerLink]="['/test-many-to-many-my-suffix/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down" >
+            Create new Test Many To Many
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Query">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="testManyToManies">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Test Entity</span></th>
+            <th><span>Test Mapstruct</span></th>
+            <th><span>Test Service Class</span></th>
+            <th><span>Test Service Impl</span></th>
+            <th><span>Test Infinite Scroll</span></th>
+            <th><span>Test Pager</span></th>
+            <th><span>Test Pagination</span></th>
+            <th><span>Test Custom Table Name</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let testManyToMany of testManyToManies ;trackBy: trackId">
+                <td><a [routerLink]="['/test-many-to-many-my-suffix', testManyToMany.id, 'view' ]">{{testManyToMany.id}}</a></td>
+                <td>
+                    <span *ngFor="let testEntity of testManyToMany.testEntities; let last = last">
+                            <a class="form-control-static" [routerLink]="['../test-entity-my-suffix-alt', testEntity?.id, 'view' ]">{{testEntity.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td>
+                    <span *ngFor="let testMapstruct of testManyToMany.testMapstructs; let last = last">
+                            <a class="form-control-static" [routerLink]="['../test-mapstruct', testMapstruct?.id, 'view' ]">{{testMapstruct.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td>
+                    <span *ngFor="let testServiceClass of testManyToMany.testServiceClasses; let last = last">
+                            <a class="form-control-static" [routerLink]="['../test-service-class', testServiceClass?.id, 'view' ]">{{testServiceClass.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td>
+                    <span *ngFor="let testServiceImpl of testManyToMany.testServiceImpls; let last = last">
+                            <a class="form-control-static" [routerLink]="['../test-service-impl', testServiceImpl?.id, 'view' ]">{{testServiceImpl.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td>
+                    <span *ngFor="let testInfiniteScroll of testManyToMany.testInfiniteScrolls; let last = last">
+                            <a class="form-control-static" [routerLink]="['../test-infinite-scroll', testInfiniteScroll?.id, 'view' ]">{{testInfiniteScroll.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td>
+                    <span *ngFor="let testPager of testManyToMany.testPagers; let last = last">
+                            <a class="form-control-static" [routerLink]="['../test-pager', testPager?.id, 'view' ]">{{testPager.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td>
+                    <span *ngFor="let testPagination of testManyToMany.testPaginations; let last = last">
+                            <a class="form-control-static" [routerLink]="['../test-pagination', testPagination?.id, 'view' ]">{{testPagination.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td>
+                    <span *ngFor="let testCustomTableName of testManyToMany.testCustomTableNames; let last = last">
+                            <a class="form-control-static" [routerLink]="['../test-custom-table-name', testCustomTableName?.id, 'view' ]">{{testCustomTableName.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/test-many-to-many-my-suffix', testManyToMany.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/test-many-to-many-my-suffix', testManyToMany.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'test-many-to-many-my-suffix/'+ testManyToMany.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

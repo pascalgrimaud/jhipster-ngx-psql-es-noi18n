@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity TestManyToOne.
+    -->
+    <changeSet id="20160208211440-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="test_entity_id"
+                                 baseTableName="test_many_to_one"
+                                 constraintName="fk_test_many_to_one_test_entity_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_entity"/>
+
+        <addForeignKeyConstraint baseColumnNames="test_mapstruct_id"
+                                 baseTableName="test_many_to_one"
+                                 constraintName="fk_test_many_to_one_test_mapstruct_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_mapstruct"/>
+
+        <addForeignKeyConstraint baseColumnNames="test_service_class_id"
+                                 baseTableName="test_many_to_one"
+                                 constraintName="fk_test_many_to_one_test_service_class_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_service_class"/>
+
+        <addForeignKeyConstraint baseColumnNames="test_service_impl_id"
+                                 baseTableName="test_many_to_one"
+                                 constraintName="fk_test_many_to_one_test_service_impl_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_service_impl"/>
+
+        <addForeignKeyConstraint baseColumnNames="test_infinite_scroll_id"
+                                 baseTableName="test_many_to_one"
+                                 constraintName="fk_test_many_to_one_test_infinite_scroll_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_infinite_scroll"/>
+
+        <addForeignKeyConstraint baseColumnNames="test_pager_id"
+                                 baseTableName="test_many_to_one"
+                                 constraintName="fk_test_many_to_one_test_pager_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_pager"/>
+
+        <addForeignKeyConstraint baseColumnNames="test_pagination_id"
+                                 baseTableName="test_many_to_one"
+                                 constraintName="fk_test_many_to_one_test_pagination_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_pagination"/>
+
+        <addForeignKeyConstraint baseColumnNames="test_custom_table_name_id"
+                                 baseTableName="test_many_to_one"
+                                 constraintName="fk_test_many_to_one_test_custom_table_name_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_custom_table_name_entity"/>
+
+    </changeSet>
+</databaseChangeLog>

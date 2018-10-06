@@ -1,0 +1,235 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fieldTestServiceClassEntity">
+            <h2><span>Field Test Service Class Entity</span> {{fieldTestServiceClassEntity.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>String Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.stringBob}}</span>
+                </dd>
+                <dt><span>String Required Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.stringRequiredBob}}</span>
+                </dd>
+                <dt><span>String Minlength Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.stringMinlengthBob}}</span>
+                </dd>
+                <dt><span>String Maxlength Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.stringMaxlengthBob}}</span>
+                </dd>
+                <dt><span>String Pattern Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.stringPatternBob}}</span>
+                </dd>
+                <dt><span>Integer Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.integerBob}}</span>
+                </dd>
+                <dt><span>Integer Required Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.integerRequiredBob}}</span>
+                </dd>
+                <dt><span>Integer Min Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.integerMinBob}}</span>
+                </dd>
+                <dt><span>Integer Max Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.integerMaxBob}}</span>
+                </dd>
+                <dt><span>Long Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.longBob}}</span>
+                </dd>
+                <dt><span>Long Required Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.longRequiredBob}}</span>
+                </dd>
+                <dt><span>Long Min Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.longMinBob}}</span>
+                </dd>
+                <dt><span>Long Max Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.longMaxBob}}</span>
+                </dd>
+                <dt><span>Float Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.floatBob}}</span>
+                </dd>
+                <dt><span>Float Required Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.floatRequiredBob}}</span>
+                </dd>
+                <dt><span>Float Min Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.floatMinBob}}</span>
+                </dd>
+                <dt><span>Float Max Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.floatMaxBob}}</span>
+                </dd>
+                <dt><span>Double Required Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.doubleRequiredBob}}</span>
+                </dd>
+                <dt><span>Double Min Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.doubleMinBob}}</span>
+                </dd>
+                <dt><span>Double Max Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.doubleMaxBob}}</span>
+                </dd>
+                <dt><span>Big Decimal Required Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.bigDecimalRequiredBob}}</span>
+                </dd>
+                <dt><span>Big Decimal Min Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.bigDecimalMinBob}}</span>
+                </dd>
+                <dt><span>Big Decimal Max Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.bigDecimalMaxBob}}</span>
+                </dd>
+                <dt><span>Local Date Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.localDateBob}}</span>
+                </dd>
+                <dt><span>Local Date Required Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.localDateRequiredBob}}</span>
+                </dd>
+                <dt><span>Instant Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.instantBob}}</span>
+                </dd>
+                <dt><span>Instante Required Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.instanteRequiredBob}}</span>
+                </dd>
+                <dt><span>Zoned Date Time Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.zonedDateTimeBob}}</span>
+                </dd>
+                <dt><span>Zoned Date Time Required Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.zonedDateTimeRequiredBob}}</span>
+                </dd>
+                <dt><span>Boolean Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.booleanBob}}</span>
+                </dd>
+                <dt><span>Boolean Required Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.booleanRequiredBob}}</span>
+                </dd>
+                <dt><span>Enum Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.enumBob}}</span>
+                </dd>
+                <dt><span>Enum Required Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.enumRequiredBob}}</span>
+                </dd>
+                <dt><span>Byte Image Bob</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestServiceClassEntity.byteImageBob">
+                        <a (click)="openFile(fieldTestServiceClassEntity.byteImageBobContentType, fieldTestServiceClassEntity.byteImageBob)">
+                            <img [src]="'data:' + fieldTestServiceClassEntity.byteImageBobContentType + ';base64,' + fieldTestServiceClassEntity.byteImageBob" style="max-width: 100%;" alt="fieldTestServiceClassEntity image"/>
+                        </a>
+                        {{fieldTestServiceClassEntity.byteImageBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteImageBob)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Image Required Bob</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestServiceClassEntity.byteImageRequiredBob">
+                        <a (click)="openFile(fieldTestServiceClassEntity.byteImageRequiredBobContentType, fieldTestServiceClassEntity.byteImageRequiredBob)">
+                            <img [src]="'data:' + fieldTestServiceClassEntity.byteImageRequiredBobContentType + ';base64,' + fieldTestServiceClassEntity.byteImageRequiredBob" style="max-width: 100%;" alt="fieldTestServiceClassEntity image"/>
+                        </a>
+                        {{fieldTestServiceClassEntity.byteImageRequiredBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteImageRequiredBob)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Image Minbytes Bob</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestServiceClassEntity.byteImageMinbytesBob">
+                        <a (click)="openFile(fieldTestServiceClassEntity.byteImageMinbytesBobContentType, fieldTestServiceClassEntity.byteImageMinbytesBob)">
+                            <img [src]="'data:' + fieldTestServiceClassEntity.byteImageMinbytesBobContentType + ';base64,' + fieldTestServiceClassEntity.byteImageMinbytesBob" style="max-width: 100%;" alt="fieldTestServiceClassEntity image"/>
+                        </a>
+                        {{fieldTestServiceClassEntity.byteImageMinbytesBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteImageMinbytesBob)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Image Maxbytes Bob</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestServiceClassEntity.byteImageMaxbytesBob">
+                        <a (click)="openFile(fieldTestServiceClassEntity.byteImageMaxbytesBobContentType, fieldTestServiceClassEntity.byteImageMaxbytesBob)">
+                            <img [src]="'data:' + fieldTestServiceClassEntity.byteImageMaxbytesBobContentType + ';base64,' + fieldTestServiceClassEntity.byteImageMaxbytesBob" style="max-width: 100%;" alt="fieldTestServiceClassEntity image"/>
+                        </a>
+                        {{fieldTestServiceClassEntity.byteImageMaxbytesBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteImageMaxbytesBob)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Bob</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestServiceClassEntity.byteAnyBob">
+                        <a (click)="openFile(fieldTestServiceClassEntity.byteAnyBobContentType, fieldTestServiceClassEntity.byteAnyBob)">open</a>
+                        {{fieldTestServiceClassEntity.byteAnyBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteAnyBob)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Required Bob</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestServiceClassEntity.byteAnyRequiredBob">
+                        <a (click)="openFile(fieldTestServiceClassEntity.byteAnyRequiredBobContentType, fieldTestServiceClassEntity.byteAnyRequiredBob)">open</a>
+                        {{fieldTestServiceClassEntity.byteAnyRequiredBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteAnyRequiredBob)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Minbytes Bob</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestServiceClassEntity.byteAnyMinbytesBob">
+                        <a (click)="openFile(fieldTestServiceClassEntity.byteAnyMinbytesBobContentType, fieldTestServiceClassEntity.byteAnyMinbytesBob)">open</a>
+                        {{fieldTestServiceClassEntity.byteAnyMinbytesBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteAnyMinbytesBob)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Maxbytes Bob</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestServiceClassEntity.byteAnyMaxbytesBob">
+                        <a (click)="openFile(fieldTestServiceClassEntity.byteAnyMaxbytesBobContentType, fieldTestServiceClassEntity.byteAnyMaxbytesBob)">open</a>
+                        {{fieldTestServiceClassEntity.byteAnyMaxbytesBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteAnyMaxbytesBob)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Text Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.byteTextBob}}</span>
+                </dd>
+                <dt><span>Byte Text Required Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.byteTextRequiredBob}}</span>
+                </dd>
+                <dt><span>Byte Text Minbytes Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.byteTextMinbytesBob}}</span>
+                </dd>
+                <dt><span>Byte Text Maxbytes Bob</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceClassEntity.byteTextMaxbytesBob}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/field-test-service-class-entity', fieldTestServiceClassEntity.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

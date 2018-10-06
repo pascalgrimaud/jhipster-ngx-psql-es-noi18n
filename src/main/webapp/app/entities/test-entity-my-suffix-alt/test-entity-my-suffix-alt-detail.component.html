@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="testEntity">
+            <h2><span>Test Entity</span> {{testEntity.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>User One To Many</span></dt>
+                <dd>
+                    {{testEntity.userOneToMany?.login}}
+                </dd>
+                <dt><span>User Many To Many</span></dt>
+                <dd>
+                    <span *ngFor="let userManyToMany of testEntity.userManyToManies; let last = last">
+                        {{userManyToMany.login}}{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>User One To One</span></dt>
+                <dd>
+                    {{testEntity.userOneToOne?.login}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/test-entity-my-suffix-alt', testEntity.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

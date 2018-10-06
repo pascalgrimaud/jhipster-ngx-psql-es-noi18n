@@ -1,0 +1,189 @@
+<div>
+    <h2 id="page-heading">
+        <span>Field Test Service Impl Entities</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-field-test-service-impl-entity" [routerLink]="['/field-test-service-impl-entity/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down" >
+            Create new Field Test Service Impl Entity
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Query">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="fieldTestServiceImplEntities">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>String Mika</span></th>
+            <th><span>String Required Mika</span></th>
+            <th><span>String Minlength Mika</span></th>
+            <th><span>String Maxlength Mika</span></th>
+            <th><span>String Pattern Mika</span></th>
+            <th><span>Integer Mika</span></th>
+            <th><span>Integer Required Mika</span></th>
+            <th><span>Integer Min Mika</span></th>
+            <th><span>Integer Max Mika</span></th>
+            <th><span>Long Mika</span></th>
+            <th><span>Long Required Mika</span></th>
+            <th><span>Long Min Mika</span></th>
+            <th><span>Long Max Mika</span></th>
+            <th><span>Float Mika</span></th>
+            <th><span>Float Required Mika</span></th>
+            <th><span>Float Min Mika</span></th>
+            <th><span>Float Max Mika</span></th>
+            <th><span>Double Required Mika</span></th>
+            <th><span>Double Min Mika</span></th>
+            <th><span>Double Max Mika</span></th>
+            <th><span>Big Decimal Required Mika</span></th>
+            <th><span>Big Decimal Min Mika</span></th>
+            <th><span>Big Decimal Max Mika</span></th>
+            <th><span>Local Date Mika</span></th>
+            <th><span>Local Date Required Mika</span></th>
+            <th><span>Instant Mika</span></th>
+            <th><span>Instante Required Mika</span></th>
+            <th><span>Zoned Date Time Mika</span></th>
+            <th><span>Zoned Date Time Required Mika</span></th>
+            <th><span>Boolean Mika</span></th>
+            <th><span>Boolean Required Mika</span></th>
+            <th><span>Enum Mika</span></th>
+            <th><span>Enum Required Mika</span></th>
+            <th><span>Byte Image Mika</span></th>
+            <th><span>Byte Image Required Mika</span></th>
+            <th><span>Byte Image Minbytes Mika</span></th>
+            <th><span>Byte Image Maxbytes Mika</span></th>
+            <th><span>Byte Any Mika</span></th>
+            <th><span>Byte Any Required Mika</span></th>
+            <th><span>Byte Any Minbytes Mika</span></th>
+            <th><span>Byte Any Maxbytes Mika</span></th>
+            <th><span>Byte Text Mika</span></th>
+            <th><span>Byte Text Required Mika</span></th>
+            <th><span>Byte Text Minbytes Mika</span></th>
+            <th><span>Byte Text Maxbytes Mika</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let fieldTestServiceImplEntity of fieldTestServiceImplEntities ;trackBy: trackId">
+                <td><a [routerLink]="['/field-test-service-impl-entity', fieldTestServiceImplEntity.id, 'view' ]">{{fieldTestServiceImplEntity.id}}</a></td>
+                <td>{{fieldTestServiceImplEntity.stringMika}}</td>
+                <td>{{fieldTestServiceImplEntity.stringRequiredMika}}</td>
+                <td>{{fieldTestServiceImplEntity.stringMinlengthMika}}</td>
+                <td>{{fieldTestServiceImplEntity.stringMaxlengthMika}}</td>
+                <td>{{fieldTestServiceImplEntity.stringPatternMika}}</td>
+                <td>{{fieldTestServiceImplEntity.integerMika}}</td>
+                <td>{{fieldTestServiceImplEntity.integerRequiredMika}}</td>
+                <td>{{fieldTestServiceImplEntity.integerMinMika}}</td>
+                <td>{{fieldTestServiceImplEntity.integerMaxMika}}</td>
+                <td>{{fieldTestServiceImplEntity.longMika}}</td>
+                <td>{{fieldTestServiceImplEntity.longRequiredMika}}</td>
+                <td>{{fieldTestServiceImplEntity.longMinMika}}</td>
+                <td>{{fieldTestServiceImplEntity.longMaxMika}}</td>
+                <td>{{fieldTestServiceImplEntity.floatMika}}</td>
+                <td>{{fieldTestServiceImplEntity.floatRequiredMika}}</td>
+                <td>{{fieldTestServiceImplEntity.floatMinMika}}</td>
+                <td>{{fieldTestServiceImplEntity.floatMaxMika}}</td>
+                <td>{{fieldTestServiceImplEntity.doubleRequiredMika}}</td>
+                <td>{{fieldTestServiceImplEntity.doubleMinMika}}</td>
+                <td>{{fieldTestServiceImplEntity.doubleMaxMika}}</td>
+                <td>{{fieldTestServiceImplEntity.bigDecimalRequiredMika}}</td>
+                <td>{{fieldTestServiceImplEntity.bigDecimalMinMika}}</td>
+                <td>{{fieldTestServiceImplEntity.bigDecimalMaxMika}}</td>
+                <td>{{fieldTestServiceImplEntity.localDateMika | date:'mediumDate'}}</td>
+                <td>{{fieldTestServiceImplEntity.localDateRequiredMika | date:'mediumDate'}}</td>
+                <td>{{fieldTestServiceImplEntity.instantMika | date:'medium'}}</td>
+                <td>{{fieldTestServiceImplEntity.instanteRequiredMika | date:'medium'}}</td>
+                <td>{{fieldTestServiceImplEntity.zonedDateTimeMika | date:'medium'}}</td>
+                <td>{{fieldTestServiceImplEntity.zonedDateTimeRequiredMika | date:'medium'}}</td>
+                <td>{{fieldTestServiceImplEntity.booleanMika}}</td>
+                <td>{{fieldTestServiceImplEntity.booleanRequiredMika}}</td>
+                <td>{{fieldTestServiceImplEntity.enumMika}}</td>
+                <td>{{fieldTestServiceImplEntity.enumRequiredMika}}</td>
+                <td>
+                    <a *ngIf="fieldTestServiceImplEntity.byteImageMika" (click)="openFile(fieldTestServiceImplEntity.byteImageMikaContentType, fieldTestServiceImplEntity.byteImageMika)">
+                        <img [src]="'data:' + fieldTestServiceImplEntity.byteImageMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageMika" style="max-height: 30px;" alt="fieldTestServiceImplEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestServiceImplEntity.byteImageMika">{{fieldTestServiceImplEntity.byteImageMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteImageMika)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestServiceImplEntity.byteImageRequiredMika" (click)="openFile(fieldTestServiceImplEntity.byteImageRequiredMikaContentType, fieldTestServiceImplEntity.byteImageRequiredMika)">
+                        <img [src]="'data:' + fieldTestServiceImplEntity.byteImageRequiredMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageRequiredMika" style="max-height: 30px;" alt="fieldTestServiceImplEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestServiceImplEntity.byteImageRequiredMika">{{fieldTestServiceImplEntity.byteImageRequiredMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteImageRequiredMika)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestServiceImplEntity.byteImageMinbytesMika" (click)="openFile(fieldTestServiceImplEntity.byteImageMinbytesMikaContentType, fieldTestServiceImplEntity.byteImageMinbytesMika)">
+                        <img [src]="'data:' + fieldTestServiceImplEntity.byteImageMinbytesMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageMinbytesMika" style="max-height: 30px;" alt="fieldTestServiceImplEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestServiceImplEntity.byteImageMinbytesMika">{{fieldTestServiceImplEntity.byteImageMinbytesMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteImageMinbytesMika)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestServiceImplEntity.byteImageMaxbytesMika" (click)="openFile(fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType, fieldTestServiceImplEntity.byteImageMaxbytesMika)">
+                        <img [src]="'data:' + fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageMaxbytesMika" style="max-height: 30px;" alt="fieldTestServiceImplEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestServiceImplEntity.byteImageMaxbytesMika">{{fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteImageMaxbytesMika)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestServiceImplEntity.byteAnyMika" (click)="openFile(fieldTestServiceImplEntity.byteAnyMikaContentType, fieldTestServiceImplEntity.byteAnyMika)">open</a>
+                    <span *ngIf="fieldTestServiceImplEntity.byteAnyMika">{{fieldTestServiceImplEntity.byteAnyMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteAnyMika)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestServiceImplEntity.byteAnyRequiredMika" (click)="openFile(fieldTestServiceImplEntity.byteAnyRequiredMikaContentType, fieldTestServiceImplEntity.byteAnyRequiredMika)">open</a>
+                    <span *ngIf="fieldTestServiceImplEntity.byteAnyRequiredMika">{{fieldTestServiceImplEntity.byteAnyRequiredMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteAnyRequiredMika)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestServiceImplEntity.byteAnyMinbytesMika" (click)="openFile(fieldTestServiceImplEntity.byteAnyMinbytesMikaContentType, fieldTestServiceImplEntity.byteAnyMinbytesMika)">open</a>
+                    <span *ngIf="fieldTestServiceImplEntity.byteAnyMinbytesMika">{{fieldTestServiceImplEntity.byteAnyMinbytesMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteAnyMinbytesMika)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestServiceImplEntity.byteAnyMaxbytesMika" (click)="openFile(fieldTestServiceImplEntity.byteAnyMaxbytesMikaContentType, fieldTestServiceImplEntity.byteAnyMaxbytesMika)">open</a>
+                    <span *ngIf="fieldTestServiceImplEntity.byteAnyMaxbytesMika">{{fieldTestServiceImplEntity.byteAnyMaxbytesMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteAnyMaxbytesMika)}}</span>
+                </td>
+                <td>{{fieldTestServiceImplEntity.byteTextMika}}</td>
+                <td>{{fieldTestServiceImplEntity.byteTextRequiredMika}}</td>
+                <td>{{fieldTestServiceImplEntity.byteTextMinbytesMika}}</td>
+                <td>{{fieldTestServiceImplEntity.byteTextMaxbytesMika}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/field-test-service-impl-entity', fieldTestServiceImplEntity.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/field-test-service-impl-entity', fieldTestServiceImplEntity.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'field-test-service-impl-entity/'+ fieldTestServiceImplEntity.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

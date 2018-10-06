@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-test-pagination-heading">Create or edit a Test Pagination</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!testPagination.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="testPagination.id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_userOneToMany">User One To Many</label>
+                    <select class="form-control" id="field_userOneToMany" name="userOneToMany" [(ngModel)]="testPagination.userOneToMany" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === testPagination.userOneToMany?.id ? testPagination.userOneToMany : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="field_userManyToMany">User Many To Many</label>
+                    <select class="form-control" id="field_userManyToMany" multiple name="userManyToMany" [(ngModel)]="testPagination.userManyToManies">
+                        <option [ngValue]="getSelected(testPagination.userManyToManies, userOption)" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_userOneToOne">User One To One</label>
+                    <select class="form-control" id="field_userOneToOne" name="userOneToOne" [(ngModel)]="testPagination.userOneToOne" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === testPagination.userOneToOne?.id ? testPagination.userOneToOne : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

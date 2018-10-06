@@ -1,0 +1,235 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fieldTestServiceImplEntity">
+            <h2><span>Field Test Service Impl Entity</span> {{fieldTestServiceImplEntity.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>String Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.stringMika}}</span>
+                </dd>
+                <dt><span>String Required Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.stringRequiredMika}}</span>
+                </dd>
+                <dt><span>String Minlength Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.stringMinlengthMika}}</span>
+                </dd>
+                <dt><span>String Maxlength Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.stringMaxlengthMika}}</span>
+                </dd>
+                <dt><span>String Pattern Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.stringPatternMika}}</span>
+                </dd>
+                <dt><span>Integer Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.integerMika}}</span>
+                </dd>
+                <dt><span>Integer Required Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.integerRequiredMika}}</span>
+                </dd>
+                <dt><span>Integer Min Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.integerMinMika}}</span>
+                </dd>
+                <dt><span>Integer Max Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.integerMaxMika}}</span>
+                </dd>
+                <dt><span>Long Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.longMika}}</span>
+                </dd>
+                <dt><span>Long Required Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.longRequiredMika}}</span>
+                </dd>
+                <dt><span>Long Min Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.longMinMika}}</span>
+                </dd>
+                <dt><span>Long Max Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.longMaxMika}}</span>
+                </dd>
+                <dt><span>Float Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.floatMika}}</span>
+                </dd>
+                <dt><span>Float Required Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.floatRequiredMika}}</span>
+                </dd>
+                <dt><span>Float Min Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.floatMinMika}}</span>
+                </dd>
+                <dt><span>Float Max Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.floatMaxMika}}</span>
+                </dd>
+                <dt><span>Double Required Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.doubleRequiredMika}}</span>
+                </dd>
+                <dt><span>Double Min Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.doubleMinMika}}</span>
+                </dd>
+                <dt><span>Double Max Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.doubleMaxMika}}</span>
+                </dd>
+                <dt><span>Big Decimal Required Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.bigDecimalRequiredMika}}</span>
+                </dd>
+                <dt><span>Big Decimal Min Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.bigDecimalMinMika}}</span>
+                </dd>
+                <dt><span>Big Decimal Max Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.bigDecimalMaxMika}}</span>
+                </dd>
+                <dt><span>Local Date Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.localDateMika}}</span>
+                </dd>
+                <dt><span>Local Date Required Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.localDateRequiredMika}}</span>
+                </dd>
+                <dt><span>Instant Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.instantMika}}</span>
+                </dd>
+                <dt><span>Instante Required Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.instanteRequiredMika}}</span>
+                </dd>
+                <dt><span>Zoned Date Time Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.zonedDateTimeMika}}</span>
+                </dd>
+                <dt><span>Zoned Date Time Required Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.zonedDateTimeRequiredMika}}</span>
+                </dd>
+                <dt><span>Boolean Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.booleanMika}}</span>
+                </dd>
+                <dt><span>Boolean Required Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.booleanRequiredMika}}</span>
+                </dd>
+                <dt><span>Enum Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.enumMika}}</span>
+                </dd>
+                <dt><span>Enum Required Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.enumRequiredMika}}</span>
+                </dd>
+                <dt><span>Byte Image Mika</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestServiceImplEntity.byteImageMika">
+                        <a (click)="openFile(fieldTestServiceImplEntity.byteImageMikaContentType, fieldTestServiceImplEntity.byteImageMika)">
+                            <img [src]="'data:' + fieldTestServiceImplEntity.byteImageMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageMika" style="max-width: 100%;" alt="fieldTestServiceImplEntity image"/>
+                        </a>
+                        {{fieldTestServiceImplEntity.byteImageMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteImageMika)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Image Required Mika</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestServiceImplEntity.byteImageRequiredMika">
+                        <a (click)="openFile(fieldTestServiceImplEntity.byteImageRequiredMikaContentType, fieldTestServiceImplEntity.byteImageRequiredMika)">
+                            <img [src]="'data:' + fieldTestServiceImplEntity.byteImageRequiredMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageRequiredMika" style="max-width: 100%;" alt="fieldTestServiceImplEntity image"/>
+                        </a>
+                        {{fieldTestServiceImplEntity.byteImageRequiredMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteImageRequiredMika)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Image Minbytes Mika</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestServiceImplEntity.byteImageMinbytesMika">
+                        <a (click)="openFile(fieldTestServiceImplEntity.byteImageMinbytesMikaContentType, fieldTestServiceImplEntity.byteImageMinbytesMika)">
+                            <img [src]="'data:' + fieldTestServiceImplEntity.byteImageMinbytesMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageMinbytesMika" style="max-width: 100%;" alt="fieldTestServiceImplEntity image"/>
+                        </a>
+                        {{fieldTestServiceImplEntity.byteImageMinbytesMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteImageMinbytesMika)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Image Maxbytes Mika</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestServiceImplEntity.byteImageMaxbytesMika">
+                        <a (click)="openFile(fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType, fieldTestServiceImplEntity.byteImageMaxbytesMika)">
+                            <img [src]="'data:' + fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageMaxbytesMika" style="max-width: 100%;" alt="fieldTestServiceImplEntity image"/>
+                        </a>
+                        {{fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteImageMaxbytesMika)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Mika</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestServiceImplEntity.byteAnyMika">
+                        <a (click)="openFile(fieldTestServiceImplEntity.byteAnyMikaContentType, fieldTestServiceImplEntity.byteAnyMika)">open</a>
+                        {{fieldTestServiceImplEntity.byteAnyMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteAnyMika)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Required Mika</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestServiceImplEntity.byteAnyRequiredMika">
+                        <a (click)="openFile(fieldTestServiceImplEntity.byteAnyRequiredMikaContentType, fieldTestServiceImplEntity.byteAnyRequiredMika)">open</a>
+                        {{fieldTestServiceImplEntity.byteAnyRequiredMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteAnyRequiredMika)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Minbytes Mika</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestServiceImplEntity.byteAnyMinbytesMika">
+                        <a (click)="openFile(fieldTestServiceImplEntity.byteAnyMinbytesMikaContentType, fieldTestServiceImplEntity.byteAnyMinbytesMika)">open</a>
+                        {{fieldTestServiceImplEntity.byteAnyMinbytesMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteAnyMinbytesMika)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Maxbytes Mika</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestServiceImplEntity.byteAnyMaxbytesMika">
+                        <a (click)="openFile(fieldTestServiceImplEntity.byteAnyMaxbytesMikaContentType, fieldTestServiceImplEntity.byteAnyMaxbytesMika)">open</a>
+                        {{fieldTestServiceImplEntity.byteAnyMaxbytesMikaContentType}}, {{byteSize(fieldTestServiceImplEntity.byteAnyMaxbytesMika)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Text Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.byteTextMika}}</span>
+                </dd>
+                <dt><span>Byte Text Required Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.byteTextRequiredMika}}</span>
+                </dd>
+                <dt><span>Byte Text Minbytes Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.byteTextMinbytesMika}}</span>
+                </dd>
+                <dt><span>Byte Text Maxbytes Mika</span></dt>
+                <dd>
+                    <span>{{fieldTestServiceImplEntity.byteTextMaxbytesMika}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/field-test-service-impl-entity', fieldTestServiceImplEntity.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

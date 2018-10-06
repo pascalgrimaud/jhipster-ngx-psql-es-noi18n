@@ -15,7 +15,6 @@
     "useSass": true,
     "buildTool": "maven",
     "enableTranslation": false,
-    "rememberMeKey": "f19f0827c622eb9b81f5227a869ccd44932d78eb",
     "testFrameworks": [
       "gatling",
       "protractor"
@@ -26,6 +25,8 @@
     "messageBroker": false,
     "serviceDiscoveryType": false,
     "clientPackageManager": "npm",
-    "clientFramework": "angularX"
+    "clientFramework": "angularX",
+    "jhipsterVersion": "5.4.1",
+    "jwtSecretKey": "NDA1ZGJiOTE2OTY0YzlhYmUxMWZhNWQ4NTI1Mzc3NDdkMjQ3MjA3MjkyNWJmNTM0ZDZkOTYyMzAyZDg2NDJlM2U0YTExNWIwYTdiNjIxMDUwM2E1N2M5ZmZiZjVjZGEwY2JjY2MyMmFjYTVmY2E0NTNiN2JhNmZhYzRiMzc4NDk="
   }
 }

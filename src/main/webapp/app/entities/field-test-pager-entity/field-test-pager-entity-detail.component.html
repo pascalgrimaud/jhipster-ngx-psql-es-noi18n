@@ -1,0 +1,235 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fieldTestPagerEntity">
+            <h2><span>Field Test Pager Entity</span> {{fieldTestPagerEntity.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>String Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.stringJade}}</span>
+                </dd>
+                <dt><span>String Required Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.stringRequiredJade}}</span>
+                </dd>
+                <dt><span>String Minlength Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.stringMinlengthJade}}</span>
+                </dd>
+                <dt><span>String Maxlength Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.stringMaxlengthJade}}</span>
+                </dd>
+                <dt><span>String Pattern Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.stringPatternJade}}</span>
+                </dd>
+                <dt><span>Integer Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.integerJade}}</span>
+                </dd>
+                <dt><span>Integer Required Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.integerRequiredJade}}</span>
+                </dd>
+                <dt><span>Integer Min Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.integerMinJade}}</span>
+                </dd>
+                <dt><span>Integer Max Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.integerMaxJade}}</span>
+                </dd>
+                <dt><span>Long Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.longJade}}</span>
+                </dd>
+                <dt><span>Long Required Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.longRequiredJade}}</span>
+                </dd>
+                <dt><span>Long Min Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.longMinJade}}</span>
+                </dd>
+                <dt><span>Long Max Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.longMaxJade}}</span>
+                </dd>
+                <dt><span>Float Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.floatJade}}</span>
+                </dd>
+                <dt><span>Float Required Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.floatRequiredJade}}</span>
+                </dd>
+                <dt><span>Float Min Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.floatMinJade}}</span>
+                </dd>
+                <dt><span>Float Max Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.floatMaxJade}}</span>
+                </dd>
+                <dt><span>Double Required Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.doubleRequiredJade}}</span>
+                </dd>
+                <dt><span>Double Min Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.doubleMinJade}}</span>
+                </dd>
+                <dt><span>Double Max Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.doubleMaxJade}}</span>
+                </dd>
+                <dt><span>Big Decimal Required Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.bigDecimalRequiredJade}}</span>
+                </dd>
+                <dt><span>Big Decimal Min Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.bigDecimalMinJade}}</span>
+                </dd>
+                <dt><span>Big Decimal Max Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.bigDecimalMaxJade}}</span>
+                </dd>
+                <dt><span>Local Date Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.localDateJade}}</span>
+                </dd>
+                <dt><span>Local Date Required Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.localDateRequiredJade}}</span>
+                </dd>
+                <dt><span>Instant Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.instantJade}}</span>
+                </dd>
+                <dt><span>Instante Required Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.instanteRequiredJade}}</span>
+                </dd>
+                <dt><span>Zoned Date Time Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.zonedDateTimeJade}}</span>
+                </dd>
+                <dt><span>Zoned Date Time Required Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.zonedDateTimeRequiredJade}}</span>
+                </dd>
+                <dt><span>Boolean Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.booleanJade}}</span>
+                </dd>
+                <dt><span>Boolean Required Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.booleanRequiredJade}}</span>
+                </dd>
+                <dt><span>Enum Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.enumJade}}</span>
+                </dd>
+                <dt><span>Enum Required Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.enumRequiredJade}}</span>
+                </dd>
+                <dt><span>Byte Image Jade</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestPagerEntity.byteImageJade">
+                        <a (click)="openFile(fieldTestPagerEntity.byteImageJadeContentType, fieldTestPagerEntity.byteImageJade)">
+                            <img [src]="'data:' + fieldTestPagerEntity.byteImageJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageJade" style="max-width: 100%;" alt="fieldTestPagerEntity image"/>
+                        </a>
+                        {{fieldTestPagerEntity.byteImageJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageJade)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Image Required Jade</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestPagerEntity.byteImageRequiredJade">
+                        <a (click)="openFile(fieldTestPagerEntity.byteImageRequiredJadeContentType, fieldTestPagerEntity.byteImageRequiredJade)">
+                            <img [src]="'data:' + fieldTestPagerEntity.byteImageRequiredJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageRequiredJade" style="max-width: 100%;" alt="fieldTestPagerEntity image"/>
+                        </a>
+                        {{fieldTestPagerEntity.byteImageRequiredJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageRequiredJade)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Image Minbytes Jade</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestPagerEntity.byteImageMinbytesJade">
+                        <a (click)="openFile(fieldTestPagerEntity.byteImageMinbytesJadeContentType, fieldTestPagerEntity.byteImageMinbytesJade)">
+                            <img [src]="'data:' + fieldTestPagerEntity.byteImageMinbytesJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageMinbytesJade" style="max-width: 100%;" alt="fieldTestPagerEntity image"/>
+                        </a>
+                        {{fieldTestPagerEntity.byteImageMinbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageMinbytesJade)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Image Maxbytes Jade</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestPagerEntity.byteImageMaxbytesJade">
+                        <a (click)="openFile(fieldTestPagerEntity.byteImageMaxbytesJadeContentType, fieldTestPagerEntity.byteImageMaxbytesJade)">
+                            <img [src]="'data:' + fieldTestPagerEntity.byteImageMaxbytesJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageMaxbytesJade" style="max-width: 100%;" alt="fieldTestPagerEntity image"/>
+                        </a>
+                        {{fieldTestPagerEntity.byteImageMaxbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteImageMaxbytesJade)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Jade</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestPagerEntity.byteAnyJade">
+                        <a (click)="openFile(fieldTestPagerEntity.byteAnyJadeContentType, fieldTestPagerEntity.byteAnyJade)">open</a>
+                        {{fieldTestPagerEntity.byteAnyJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyJade)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Required Jade</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestPagerEntity.byteAnyRequiredJade">
+                        <a (click)="openFile(fieldTestPagerEntity.byteAnyRequiredJadeContentType, fieldTestPagerEntity.byteAnyRequiredJade)">open</a>
+                        {{fieldTestPagerEntity.byteAnyRequiredJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyRequiredJade)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Minbytes Jade</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestPagerEntity.byteAnyMinbytesJade">
+                        <a (click)="openFile(fieldTestPagerEntity.byteAnyMinbytesJadeContentType, fieldTestPagerEntity.byteAnyMinbytesJade)">open</a>
+                        {{fieldTestPagerEntity.byteAnyMinbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyMinbytesJade)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Maxbytes Jade</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestPagerEntity.byteAnyMaxbytesJade">
+                        <a (click)="openFile(fieldTestPagerEntity.byteAnyMaxbytesJadeContentType, fieldTestPagerEntity.byteAnyMaxbytesJade)">open</a>
+                        {{fieldTestPagerEntity.byteAnyMaxbytesJadeContentType}}, {{byteSize(fieldTestPagerEntity.byteAnyMaxbytesJade)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Text Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.byteTextJade}}</span>
+                </dd>
+                <dt><span>Byte Text Required Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.byteTextRequiredJade}}</span>
+                </dd>
+                <dt><span>Byte Text Minbytes Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.byteTextMinbytesJade}}</span>
+                </dd>
+                <dt><span>Byte Text Maxbytes Jade</span></dt>
+                <dd>
+                    <span>{{fieldTestPagerEntity.byteTextMaxbytesJade}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/field-test-pager-entity', fieldTestPagerEntity.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="division">
+            <h2><span>Division</span> {{division.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{division.name}}</span>
+                </dd>
+                <dt><span>Short Name</span></dt>
+                <dd>
+                    <span>{{division.shortName}}</span>
+                </dd>
+                <dt><span>Number Of People</span></dt>
+                <dd>
+                    <span>{{division.numberOfPeople}}</span>
+                </dd>
+                <dt><span>Division Type</span></dt>
+                <dd>
+                    <span>{{division.divisionType}}</span>
+                </dd>
+                <dt><span>Color Background</span></dt>
+                <dd>
+                    <span>{{division.colorBackground}}</span>
+                </dd>
+                <dt><span>Color Text</span></dt>
+                <dd>
+                    <span>{{division.colorText}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/division', division.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,189 @@
+<div>
+    <h2 id="page-heading">
+        <span>Field Test Mapstruct Entities</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-field-test-mapstruct-entity" [routerLink]="['/field-test-mapstruct-entity/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down" >
+            Create new Field Test Mapstruct Entity
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Query">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="fieldTestMapstructEntities">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>String Eva</span></th>
+            <th><span>String Required Eva</span></th>
+            <th><span>String Minlength Eva</span></th>
+            <th><span>String Maxlength Eva</span></th>
+            <th><span>String Pattern Eva</span></th>
+            <th><span>Integer Eva</span></th>
+            <th><span>Integer Required Eva</span></th>
+            <th><span>Integer Min Eva</span></th>
+            <th><span>Integer Max Eva</span></th>
+            <th><span>Long Eva</span></th>
+            <th><span>Long Required Eva</span></th>
+            <th><span>Long Min Eva</span></th>
+            <th><span>Long Max Eva</span></th>
+            <th><span>Float Eva</span></th>
+            <th><span>Float Required Eva</span></th>
+            <th><span>Float Min Eva</span></th>
+            <th><span>Float Max Eva</span></th>
+            <th><span>Double Required Eva</span></th>
+            <th><span>Double Min Eva</span></th>
+            <th><span>Double Max Eva</span></th>
+            <th><span>Big Decimal Required Eva</span></th>
+            <th><span>Big Decimal Min Eva</span></th>
+            <th><span>Big Decimal Max Eva</span></th>
+            <th><span>Local Date Eva</span></th>
+            <th><span>Local Date Required Eva</span></th>
+            <th><span>Instant Eva</span></th>
+            <th><span>Instante Required Eva</span></th>
+            <th><span>Zoned Date Time Eva</span></th>
+            <th><span>Zoned Date Time Required Eva</span></th>
+            <th><span>Boolean Eva</span></th>
+            <th><span>Boolean Required Eva</span></th>
+            <th><span>Enum Eva</span></th>
+            <th><span>Enum Required Eva</span></th>
+            <th><span>Byte Image Eva</span></th>
+            <th><span>Byte Image Required Eva</span></th>
+            <th><span>Byte Image Minbytes Eva</span></th>
+            <th><span>Byte Image Maxbytes Eva</span></th>
+            <th><span>Byte Any Eva</span></th>
+            <th><span>Byte Any Required Eva</span></th>
+            <th><span>Byte Any Minbytes Eva</span></th>
+            <th><span>Byte Any Maxbytes Eva</span></th>
+            <th><span>Byte Text Eva</span></th>
+            <th><span>Byte Text Required Eva</span></th>
+            <th><span>Byte Text Minbytes Eva</span></th>
+            <th><span>Byte Text Maxbytes Eva</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let fieldTestMapstructEntity of fieldTestMapstructEntities ;trackBy: trackId">
+                <td><a [routerLink]="['/field-test-mapstruct-entity', fieldTestMapstructEntity.id, 'view' ]">{{fieldTestMapstructEntity.id}}</a></td>
+                <td>{{fieldTestMapstructEntity.stringEva}}</td>
+                <td>{{fieldTestMapstructEntity.stringRequiredEva}}</td>
+                <td>{{fieldTestMapstructEntity.stringMinlengthEva}}</td>
+                <td>{{fieldTestMapstructEntity.stringMaxlengthEva}}</td>
+                <td>{{fieldTestMapstructEntity.stringPatternEva}}</td>
+                <td>{{fieldTestMapstructEntity.integerEva}}</td>
+                <td>{{fieldTestMapstructEntity.integerRequiredEva}}</td>
+                <td>{{fieldTestMapstructEntity.integerMinEva}}</td>
+                <td>{{fieldTestMapstructEntity.integerMaxEva}}</td>
+                <td>{{fieldTestMapstructEntity.longEva}}</td>
+                <td>{{fieldTestMapstructEntity.longRequiredEva}}</td>
+                <td>{{fieldTestMapstructEntity.longMinEva}}</td>
+                <td>{{fieldTestMapstructEntity.longMaxEva}}</td>
+                <td>{{fieldTestMapstructEntity.floatEva}}</td>
+                <td>{{fieldTestMapstructEntity.floatRequiredEva}}</td>
+                <td>{{fieldTestMapstructEntity.floatMinEva}}</td>
+                <td>{{fieldTestMapstructEntity.floatMaxEva}}</td>
+                <td>{{fieldTestMapstructEntity.doubleRequiredEva}}</td>
+                <td>{{fieldTestMapstructEntity.doubleMinEva}}</td>
+                <td>{{fieldTestMapstructEntity.doubleMaxEva}}</td>
+                <td>{{fieldTestMapstructEntity.bigDecimalRequiredEva}}</td>
+                <td>{{fieldTestMapstructEntity.bigDecimalMinEva}}</td>
+                <td>{{fieldTestMapstructEntity.bigDecimalMaxEva}}</td>
+                <td>{{fieldTestMapstructEntity.localDateEva | date:'mediumDate'}}</td>
+                <td>{{fieldTestMapstructEntity.localDateRequiredEva | date:'mediumDate'}}</td>
+                <td>{{fieldTestMapstructEntity.instantEva | date:'medium'}}</td>
+                <td>{{fieldTestMapstructEntity.instanteRequiredEva | date:'medium'}}</td>
+                <td>{{fieldTestMapstructEntity.zonedDateTimeEva | date:'medium'}}</td>
+                <td>{{fieldTestMapstructEntity.zonedDateTimeRequiredEva | date:'medium'}}</td>
+                <td>{{fieldTestMapstructEntity.booleanEva}}</td>
+                <td>{{fieldTestMapstructEntity.booleanRequiredEva}}</td>
+                <td>{{fieldTestMapstructEntity.enumEva}}</td>
+                <td>{{fieldTestMapstructEntity.enumRequiredEva}}</td>
+                <td>
+                    <a *ngIf="fieldTestMapstructEntity.byteImageEva" (click)="openFile(fieldTestMapstructEntity.byteImageEvaContentType, fieldTestMapstructEntity.byteImageEva)">
+                        <img [src]="'data:' + fieldTestMapstructEntity.byteImageEvaContentType + ';base64,' + fieldTestMapstructEntity.byteImageEva" style="max-height: 30px;" alt="fieldTestMapstructEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestMapstructEntity.byteImageEva">{{fieldTestMapstructEntity.byteImageEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteImageEva)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestMapstructEntity.byteImageRequiredEva" (click)="openFile(fieldTestMapstructEntity.byteImageRequiredEvaContentType, fieldTestMapstructEntity.byteImageRequiredEva)">
+                        <img [src]="'data:' + fieldTestMapstructEntity.byteImageRequiredEvaContentType + ';base64,' + fieldTestMapstructEntity.byteImageRequiredEva" style="max-height: 30px;" alt="fieldTestMapstructEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestMapstructEntity.byteImageRequiredEva">{{fieldTestMapstructEntity.byteImageRequiredEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteImageRequiredEva)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestMapstructEntity.byteImageMinbytesEva" (click)="openFile(fieldTestMapstructEntity.byteImageMinbytesEvaContentType, fieldTestMapstructEntity.byteImageMinbytesEva)">
+                        <img [src]="'data:' + fieldTestMapstructEntity.byteImageMinbytesEvaContentType + ';base64,' + fieldTestMapstructEntity.byteImageMinbytesEva" style="max-height: 30px;" alt="fieldTestMapstructEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestMapstructEntity.byteImageMinbytesEva">{{fieldTestMapstructEntity.byteImageMinbytesEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteImageMinbytesEva)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestMapstructEntity.byteImageMaxbytesEva" (click)="openFile(fieldTestMapstructEntity.byteImageMaxbytesEvaContentType, fieldTestMapstructEntity.byteImageMaxbytesEva)">
+                        <img [src]="'data:' + fieldTestMapstructEntity.byteImageMaxbytesEvaContentType + ';base64,' + fieldTestMapstructEntity.byteImageMaxbytesEva" style="max-height: 30px;" alt="fieldTestMapstructEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestMapstructEntity.byteImageMaxbytesEva">{{fieldTestMapstructEntity.byteImageMaxbytesEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteImageMaxbytesEva)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestMapstructEntity.byteAnyEva" (click)="openFile(fieldTestMapstructEntity.byteAnyEvaContentType, fieldTestMapstructEntity.byteAnyEva)">open</a>
+                    <span *ngIf="fieldTestMapstructEntity.byteAnyEva">{{fieldTestMapstructEntity.byteAnyEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteAnyEva)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestMapstructEntity.byteAnyRequiredEva" (click)="openFile(fieldTestMapstructEntity.byteAnyRequiredEvaContentType, fieldTestMapstructEntity.byteAnyRequiredEva)">open</a>
+                    <span *ngIf="fieldTestMapstructEntity.byteAnyRequiredEva">{{fieldTestMapstructEntity.byteAnyRequiredEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteAnyRequiredEva)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestMapstructEntity.byteAnyMinbytesEva" (click)="openFile(fieldTestMapstructEntity.byteAnyMinbytesEvaContentType, fieldTestMapstructEntity.byteAnyMinbytesEva)">open</a>
+                    <span *ngIf="fieldTestMapstructEntity.byteAnyMinbytesEva">{{fieldTestMapstructEntity.byteAnyMinbytesEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteAnyMinbytesEva)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestMapstructEntity.byteAnyMaxbytesEva" (click)="openFile(fieldTestMapstructEntity.byteAnyMaxbytesEvaContentType, fieldTestMapstructEntity.byteAnyMaxbytesEva)">open</a>
+                    <span *ngIf="fieldTestMapstructEntity.byteAnyMaxbytesEva">{{fieldTestMapstructEntity.byteAnyMaxbytesEvaContentType}}, {{byteSize(fieldTestMapstructEntity.byteAnyMaxbytesEva)}}</span>
+                </td>
+                <td>{{fieldTestMapstructEntity.byteTextEva}}</td>
+                <td>{{fieldTestMapstructEntity.byteTextRequiredEva}}</td>
+                <td>{{fieldTestMapstructEntity.byteTextMinbytesEva}}</td>
+                <td>{{fieldTestMapstructEntity.byteTextMaxbytesEva}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/field-test-mapstruct-entity', fieldTestMapstructEntity.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/field-test-mapstruct-entity', fieldTestMapstructEntity.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'field-test-mapstruct-entity/'+ fieldTestMapstructEntity.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

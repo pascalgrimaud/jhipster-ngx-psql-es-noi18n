@@ -1,0 +1,235 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fieldTestPaginationEntity">
+            <h2><span>Field Test Pagination Entity</span> {{fieldTestPaginationEntity.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>String Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.stringAlice}}</span>
+                </dd>
+                <dt><span>String Required Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.stringRequiredAlice}}</span>
+                </dd>
+                <dt><span>String Minlength Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.stringMinlengthAlice}}</span>
+                </dd>
+                <dt><span>String Maxlength Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.stringMaxlengthAlice}}</span>
+                </dd>
+                <dt><span>String Pattern Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.stringPatternAlice}}</span>
+                </dd>
+                <dt><span>Integer Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.integerAlice}}</span>
+                </dd>
+                <dt><span>Integer Required Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.integerRequiredAlice}}</span>
+                </dd>
+                <dt><span>Integer Min Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.integerMinAlice}}</span>
+                </dd>
+                <dt><span>Integer Max Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.integerMaxAlice}}</span>
+                </dd>
+                <dt><span>Long Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.longAlice}}</span>
+                </dd>
+                <dt><span>Long Required Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.longRequiredAlice}}</span>
+                </dd>
+                <dt><span>Long Min Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.longMinAlice}}</span>
+                </dd>
+                <dt><span>Long Max Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.longMaxAlice}}</span>
+                </dd>
+                <dt><span>Float Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.floatAlice}}</span>
+                </dd>
+                <dt><span>Float Required Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.floatRequiredAlice}}</span>
+                </dd>
+                <dt><span>Float Min Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.floatMinAlice}}</span>
+                </dd>
+                <dt><span>Float Max Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.floatMaxAlice}}</span>
+                </dd>
+                <dt><span>Double Required Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.doubleRequiredAlice}}</span>
+                </dd>
+                <dt><span>Double Min Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.doubleMinAlice}}</span>
+                </dd>
+                <dt><span>Double Max Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.doubleMaxAlice}}</span>
+                </dd>
+                <dt><span>Big Decimal Required Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.bigDecimalRequiredAlice}}</span>
+                </dd>
+                <dt><span>Big Decimal Min Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.bigDecimalMinAlice}}</span>
+                </dd>
+                <dt><span>Big Decimal Max Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.bigDecimalMaxAlice}}</span>
+                </dd>
+                <dt><span>Local Date Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.localDateAlice}}</span>
+                </dd>
+                <dt><span>Local Date Required Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.localDateRequiredAlice}}</span>
+                </dd>
+                <dt><span>Instant Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.instantAlice}}</span>
+                </dd>
+                <dt><span>Instante Required Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.instanteRequiredAlice}}</span>
+                </dd>
+                <dt><span>Zoned Date Time Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.zonedDateTimeAlice}}</span>
+                </dd>
+                <dt><span>Zoned Date Time Required Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.zonedDateTimeRequiredAlice}}</span>
+                </dd>
+                <dt><span>Boolean Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.booleanAlice}}</span>
+                </dd>
+                <dt><span>Boolean Required Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.booleanRequiredAlice}}</span>
+                </dd>
+                <dt><span>Enum Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.enumAlice}}</span>
+                </dd>
+                <dt><span>Enum Required Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.enumRequiredAlice}}</span>
+                </dd>
+                <dt><span>Byte Image Alice</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestPaginationEntity.byteImageAlice">
+                        <a (click)="openFile(fieldTestPaginationEntity.byteImageAliceContentType, fieldTestPaginationEntity.byteImageAlice)">
+                            <img [src]="'data:' + fieldTestPaginationEntity.byteImageAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageAlice" style="max-width: 100%;" alt="fieldTestPaginationEntity image"/>
+                        </a>
+                        {{fieldTestPaginationEntity.byteImageAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteImageAlice)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Image Required Alice</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestPaginationEntity.byteImageRequiredAlice">
+                        <a (click)="openFile(fieldTestPaginationEntity.byteImageRequiredAliceContentType, fieldTestPaginationEntity.byteImageRequiredAlice)">
+                            <img [src]="'data:' + fieldTestPaginationEntity.byteImageRequiredAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageRequiredAlice" style="max-width: 100%;" alt="fieldTestPaginationEntity image"/>
+                        </a>
+                        {{fieldTestPaginationEntity.byteImageRequiredAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteImageRequiredAlice)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Image Minbytes Alice</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestPaginationEntity.byteImageMinbytesAlice">
+                        <a (click)="openFile(fieldTestPaginationEntity.byteImageMinbytesAliceContentType, fieldTestPaginationEntity.byteImageMinbytesAlice)">
+                            <img [src]="'data:' + fieldTestPaginationEntity.byteImageMinbytesAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageMinbytesAlice" style="max-width: 100%;" alt="fieldTestPaginationEntity image"/>
+                        </a>
+                        {{fieldTestPaginationEntity.byteImageMinbytesAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteImageMinbytesAlice)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Image Maxbytes Alice</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestPaginationEntity.byteImageMaxbytesAlice">
+                        <a (click)="openFile(fieldTestPaginationEntity.byteImageMaxbytesAliceContentType, fieldTestPaginationEntity.byteImageMaxbytesAlice)">
+                            <img [src]="'data:' + fieldTestPaginationEntity.byteImageMaxbytesAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageMaxbytesAlice" style="max-width: 100%;" alt="fieldTestPaginationEntity image"/>
+                        </a>
+                        {{fieldTestPaginationEntity.byteImageMaxbytesAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteImageMaxbytesAlice)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Alice</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestPaginationEntity.byteAnyAlice">
+                        <a (click)="openFile(fieldTestPaginationEntity.byteAnyAliceContentType, fieldTestPaginationEntity.byteAnyAlice)">open</a>
+                        {{fieldTestPaginationEntity.byteAnyAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteAnyAlice)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Required Alice</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestPaginationEntity.byteAnyRequiredAlice">
+                        <a (click)="openFile(fieldTestPaginationEntity.byteAnyRequiredAliceContentType, fieldTestPaginationEntity.byteAnyRequiredAlice)">open</a>
+                        {{fieldTestPaginationEntity.byteAnyRequiredAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteAnyRequiredAlice)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Minbytes Alice</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestPaginationEntity.byteAnyMinbytesAlice">
+                        <a (click)="openFile(fieldTestPaginationEntity.byteAnyMinbytesAliceContentType, fieldTestPaginationEntity.byteAnyMinbytesAlice)">open</a>
+                        {{fieldTestPaginationEntity.byteAnyMinbytesAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteAnyMinbytesAlice)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Maxbytes Alice</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestPaginationEntity.byteAnyMaxbytesAlice">
+                        <a (click)="openFile(fieldTestPaginationEntity.byteAnyMaxbytesAliceContentType, fieldTestPaginationEntity.byteAnyMaxbytesAlice)">open</a>
+                        {{fieldTestPaginationEntity.byteAnyMaxbytesAliceContentType}}, {{byteSize(fieldTestPaginationEntity.byteAnyMaxbytesAlice)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Text Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.byteTextAlice}}</span>
+                </dd>
+                <dt><span>Byte Text Required Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.byteTextRequiredAlice}}</span>
+                </dd>
+                <dt><span>Byte Text Minbytes Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.byteTextMinbytesAlice}}</span>
+                </dd>
+                <dt><span>Byte Text Maxbytes Alice</span></dt>
+                <dd>
+                    <span>{{fieldTestPaginationEntity.byteTextMaxbytesAlice}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/field-test-pagination-entity', fieldTestPaginationEntity.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

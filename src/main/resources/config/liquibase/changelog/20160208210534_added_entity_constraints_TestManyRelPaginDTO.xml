@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity TestManyRelPaginDTO.
+    -->
+    <changeSet id="20160208210534-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="test_many_rel_pagindtos_id"
+                                 baseTableName="test_many_rel_pagindto_test_mapstruct"
+                                 constraintName="fk_test_many_rel_pagindto_test_mapstruct_test_many_rel_pagindtos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_many_many_pagination_dto"/>
+        <addForeignKeyConstraint baseColumnNames="test_mapstructs_id"
+                                 baseTableName="test_many_rel_pagindto_test_mapstruct"
+                                 constraintName="fk_test_many_rel_pagindto_test_mapstruct_test_mapstructs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_mapstruct"/>
+        
+    </changeSet>
+</databaseChangeLog>

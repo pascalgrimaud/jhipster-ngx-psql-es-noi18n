@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity TestManyToMany.
+    -->
+    <changeSet id="20160208210534-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="test_many_to_manies_id"
+                                 baseTableName="test_many_to_many_test_entity"
+                                 constraintName="fk_test_many_to_many_test_entity_test_many_to_manies_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_many_to_many"/>
+        <addForeignKeyConstraint baseColumnNames="test_entities_id"
+                                 baseTableName="test_many_to_many_test_entity"
+                                 constraintName="fk_test_many_to_many_test_entity_test_entities_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_entity"/>
+        
+        <addForeignKeyConstraint baseColumnNames="test_many_to_manies_id"
+                                 baseTableName="test_many_to_many_test_mapstruct"
+                                 constraintName="fk_test_many_to_many_test_mapstruct_test_many_to_manies_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_many_to_many"/>
+        <addForeignKeyConstraint baseColumnNames="test_mapstructs_id"
+                                 baseTableName="test_many_to_many_test_mapstruct"
+                                 constraintName="fk_test_many_to_many_test_mapstruct_test_mapstructs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_mapstruct"/>
+        
+        <addForeignKeyConstraint baseColumnNames="test_many_to_manies_id"
+                                 baseTableName="test_many_to_many_test_service_class"
+                                 constraintName="fk_test_many_to_many_test_service_class_test_many_to_manies_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_many_to_many"/>
+        <addForeignKeyConstraint baseColumnNames="test_service_classes_id"
+                                 baseTableName="test_many_to_many_test_service_class"
+                                 constraintName="fk_test_many_to_many_test_service_class_test_service_classes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_service_class"/>
+        
+        <addForeignKeyConstraint baseColumnNames="test_many_to_manies_id"
+                                 baseTableName="test_many_to_many_test_service_impl"
+                                 constraintName="fk_test_many_to_many_test_service_impl_test_many_to_manies_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_many_to_many"/>
+        <addForeignKeyConstraint baseColumnNames="test_service_impls_id"
+                                 baseTableName="test_many_to_many_test_service_impl"
+                                 constraintName="fk_test_many_to_many_test_service_impl_test_service_impls_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_service_impl"/>
+        
+        <addForeignKeyConstraint baseColumnNames="test_many_to_manies_id"
+                                 baseTableName="test_many_to_many_test_infinite_scroll"
+                                 constraintName="fk_test_many_to_many_test_infinite_scroll_test_many_to_manies_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_many_to_many"/>
+        <addForeignKeyConstraint baseColumnNames="test_infinite_scrolls_id"
+                                 baseTableName="test_many_to_many_test_infinite_scroll"
+                                 constraintName="fk_test_many_to_many_test_infinite_scroll_test_infinite_scrolls_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_infinite_scroll"/>
+        
+        <addForeignKeyConstraint baseColumnNames="test_many_to_manies_id"
+                                 baseTableName="test_many_to_many_test_pager"
+                                 constraintName="fk_test_many_to_many_test_pager_test_many_to_manies_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_many_to_many"/>
+        <addForeignKeyConstraint baseColumnNames="test_pagers_id"
+                                 baseTableName="test_many_to_many_test_pager"
+                                 constraintName="fk_test_many_to_many_test_pager_test_pagers_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_pager"/>
+        
+        <addForeignKeyConstraint baseColumnNames="test_many_to_manies_id"
+                                 baseTableName="test_many_to_many_test_pagination"
+                                 constraintName="fk_test_many_to_many_test_pagination_test_many_to_manies_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_many_to_many"/>
+        <addForeignKeyConstraint baseColumnNames="test_paginations_id"
+                                 baseTableName="test_many_to_many_test_pagination"
+                                 constraintName="fk_test_many_to_many_test_pagination_test_paginations_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_pagination"/>
+        
+        <addForeignKeyConstraint baseColumnNames="test_many_to_manies_id"
+                                 baseTableName="test_many_to_many_test_custom_table_name"
+                                 constraintName="fk_test_many_to_many_test_custom_table_name_test_many_to_manies_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_many_to_many"/>
+        <addForeignKeyConstraint baseColumnNames="test_custom_table_names_id"
+                                 baseTableName="test_many_to_many_test_custom_table_name"
+                                 constraintName="fk_test_many_to_many_test_custom_table_name_test_custom_table_names_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_custom_table_name_entity"/>
+        
+    </changeSet>
+</databaseChangeLog>

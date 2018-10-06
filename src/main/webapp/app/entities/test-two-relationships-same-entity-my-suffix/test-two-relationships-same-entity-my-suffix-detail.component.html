@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="testTwoRelationshipsSameEntity">
+            <h2><span>Test Two Relationships Same Entity</span> {{testTwoRelationshipsSameEntity.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>First Relationship</span></dt>
+                <dd>
+                    <div *ngIf="testTwoRelationshipsSameEntity.firstRelationship">
+                        <a [routerLink]="['/test-entity-my-suffix-alt', testTwoRelationshipsSameEntity.firstRelationship?.id, 'view']">{{testTwoRelationshipsSameEntity.firstRelationship?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Second Relationship</span></dt>
+                <dd>
+                    <div *ngIf="testTwoRelationshipsSameEntity.secondRelationship">
+                        <a [routerLink]="['/test-entity-my-suffix-alt', testTwoRelationshipsSameEntity.secondRelationship?.id, 'view']">{{testTwoRelationshipsSameEntity.secondRelationship?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>User One</span></dt>
+                <dd>
+                    {{testTwoRelationshipsSameEntity.userOne?.id}}
+                </dd>
+                <dt><span>User Two</span></dt>
+                <dd>
+                    {{testTwoRelationshipsSameEntity.userTwo?.id}}
+                </dd>
+                <dt><span>First Unique Required Relation</span></dt>
+                <dd>
+                    <div *ngIf="testTwoRelationshipsSameEntity.firstUniqueRequiredRelation">
+                        <a [routerLink]="['/division', testTwoRelationshipsSameEntity.firstUniqueRequiredRelation?.id, 'view']">{{testTwoRelationshipsSameEntity.firstUniqueRequiredRelation?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Second Unique Required Relation</span></dt>
+                <dd>
+                    <div *ngIf="testTwoRelationshipsSameEntity.secondUniqueRequiredRelation">
+                        <a [routerLink]="['/division', testTwoRelationshipsSameEntity.secondUniqueRequiredRelation?.id, 'view']">{{testTwoRelationshipsSameEntity.secondUniqueRequiredRelation?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/test-two-relationships-same-entity-my-suffix', testTwoRelationshipsSameEntity.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

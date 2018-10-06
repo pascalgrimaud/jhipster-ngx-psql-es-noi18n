@@ -1,0 +1,91 @@
+<div>
+    <h2 id="page-heading">
+        <span>Places</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-place" [routerLink]="['/place/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down" >
+            Create new Place
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Query">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="places">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Name</span></th>
+            <th><span>Number Of Seats</span></th>
+            <th><span>Short Name</span></th>
+            <th><span>Color Background</span></th>
+            <th><span>Color Text</span></th>
+            <th><span>Description</span></th>
+            <th><span>Preferred Division</span></th>
+            <th><span>Owner</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let place of places ;trackBy: trackId">
+                <td><a [routerLink]="['/place', place.id, 'view' ]">{{place.id}}</a></td>
+                <td>{{place.name}}</td>
+                <td>{{place.numberOfSeats}}</td>
+                <td>{{place.shortName}}</td>
+                <td>{{place.colorBackground}}</td>
+                <td>{{place.colorText}}</td>
+                <td>{{place.description}}</td>
+                <td>
+                    <span *ngFor="let preferredDivision of place.preferredDivisions; let last = last">
+                            <a class="form-control-static" [routerLink]="['../division', preferredDivision?.id, 'view' ]">{{preferredDivision.name}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td>
+                    <div *ngIf="place.owner">
+                        <a [routerLink]="['../division', place.owner?.id, 'view' ]" >{{place.owner?.name}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/place', place.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/place', place.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'place/'+ place.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

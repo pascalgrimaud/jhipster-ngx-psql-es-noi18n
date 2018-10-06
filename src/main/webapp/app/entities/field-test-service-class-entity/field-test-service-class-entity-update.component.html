@@ -1,0 +1,639 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-field-test-service-class-entity-heading">Create or edit a Field Test Service Class Entity</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!fieldTestServiceClassEntity.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="fieldTestServiceClassEntity.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_stringBob">String Bob</label>
+                    <input type="text" class="form-control" name="stringBob" id="field_stringBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.stringBob" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_stringRequiredBob">String Required Bob</label>
+                    <input type="text" class="form-control" name="stringRequiredBob" id="field_stringRequiredBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.stringRequiredBob" required/>
+                    <div [hidden]="!(editForm.controls.stringRequiredBob?.dirty && editForm.controls.stringRequiredBob?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.stringRequiredBob?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_stringMinlengthBob">String Minlength Bob</label>
+                    <input type="text" class="form-control" name="stringMinlengthBob" id="field_stringMinlengthBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.stringMinlengthBob" minlength="0"/>
+                    <div [hidden]="!(editForm.controls.stringMinlengthBob?.dirty && editForm.controls.stringMinlengthBob?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.stringMinlengthBob?.errors?.minlength">
+                        This field is required to be at least 0 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_stringMaxlengthBob">String Maxlength Bob</label>
+                    <input type="text" class="form-control" name="stringMaxlengthBob" id="field_stringMaxlengthBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.stringMaxlengthBob" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.stringMaxlengthBob?.dirty && editForm.controls.stringMaxlengthBob?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.stringMaxlengthBob?.errors?.maxlength">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_stringPatternBob">String Pattern Bob</label>
+                    <input type="text" class="form-control" name="stringPatternBob" id="field_stringPatternBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.stringPatternBob" pattern="^[a-zA-Z0-9]*$"/>
+                    <div [hidden]="!(editForm.controls.stringPatternBob?.dirty && editForm.controls.stringPatternBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.stringPatternBob?.errors?.pattern">
+                            This field should follow pattern for "String Pattern Bob".
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_integerBob">Integer Bob</label>
+                    <input type="number" class="form-control" name="integerBob" id="field_integerBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.integerBob" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_integerRequiredBob">Integer Required Bob</label>
+                    <input type="number" class="form-control" name="integerRequiredBob" id="field_integerRequiredBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.integerRequiredBob" required/>
+                    <div [hidden]="!(editForm.controls.integerRequiredBob?.dirty && editForm.controls.integerRequiredBob?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.integerRequiredBob?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.integerRequiredBob?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_integerMinBob">Integer Min Bob</label>
+                    <input type="number" class="form-control" name="integerMinBob" id="field_integerMinBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.integerMinBob" min="0" jhiMin="0"/>
+                    <div [hidden]="!(editForm.controls.integerMinBob?.dirty && editForm.controls.integerMinBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.integerMinBob?.errors?.min">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.integerMinBob?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_integerMaxBob">Integer Max Bob</label>
+                    <input type="number" class="form-control" name="integerMaxBob" id="field_integerMaxBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.integerMaxBob" max="100" jhiMax="100"/>
+                    <div [hidden]="!(editForm.controls.integerMaxBob?.dirty && editForm.controls.integerMaxBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.integerMaxBob?.errors?.max">
+                            This field cannot be more than 100.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.integerMaxBob?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_longBob">Long Bob</label>
+                    <input type="number" class="form-control" name="longBob" id="field_longBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.longBob" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_longRequiredBob">Long Required Bob</label>
+                    <input type="number" class="form-control" name="longRequiredBob" id="field_longRequiredBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.longRequiredBob" required/>
+                    <div [hidden]="!(editForm.controls.longRequiredBob?.dirty && editForm.controls.longRequiredBob?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.longRequiredBob?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.longRequiredBob?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_longMinBob">Long Min Bob</label>
+                    <input type="number" class="form-control" name="longMinBob" id="field_longMinBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.longMinBob" min="0" jhiMin="0"/>
+                    <div [hidden]="!(editForm.controls.longMinBob?.dirty && editForm.controls.longMinBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.longMinBob?.errors?.min">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.longMinBob?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_longMaxBob">Long Max Bob</label>
+                    <input type="number" class="form-control" name="longMaxBob" id="field_longMaxBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.longMaxBob" max="100" jhiMax="100"/>
+                    <div [hidden]="!(editForm.controls.longMaxBob?.dirty && editForm.controls.longMaxBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.longMaxBob?.errors?.max">
+                            This field cannot be more than 100.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.longMaxBob?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_floatBob">Float Bob</label>
+                    <input type="number" class="form-control" name="floatBob" id="field_floatBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.floatBob" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_floatRequiredBob">Float Required Bob</label>
+                    <input type="number" class="form-control" name="floatRequiredBob" id="field_floatRequiredBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.floatRequiredBob" required/>
+                    <div [hidden]="!(editForm.controls.floatRequiredBob?.dirty && editForm.controls.floatRequiredBob?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.floatRequiredBob?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.floatRequiredBob?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_floatMinBob">Float Min Bob</label>
+                    <input type="number" class="form-control" name="floatMinBob" id="field_floatMinBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.floatMinBob" min="0" jhiMin="0"/>
+                    <div [hidden]="!(editForm.controls.floatMinBob?.dirty && editForm.controls.floatMinBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.floatMinBob?.errors?.min">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.floatMinBob?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_floatMaxBob">Float Max Bob</label>
+                    <input type="number" class="form-control" name="floatMaxBob" id="field_floatMaxBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.floatMaxBob" max="100" jhiMax="100"/>
+                    <div [hidden]="!(editForm.controls.floatMaxBob?.dirty && editForm.controls.floatMaxBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.floatMaxBob?.errors?.max">
+                            This field cannot be more than 100.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.floatMaxBob?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_doubleRequiredBob">Double Required Bob</label>
+                    <input type="number" class="form-control" name="doubleRequiredBob" id="field_doubleRequiredBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.doubleRequiredBob" required/>
+                    <div [hidden]="!(editForm.controls.doubleRequiredBob?.dirty && editForm.controls.doubleRequiredBob?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.doubleRequiredBob?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.doubleRequiredBob?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_doubleMinBob">Double Min Bob</label>
+                    <input type="number" class="form-control" name="doubleMinBob" id="field_doubleMinBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.doubleMinBob" min="0" jhiMin="0"/>
+                    <div [hidden]="!(editForm.controls.doubleMinBob?.dirty && editForm.controls.doubleMinBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.doubleMinBob?.errors?.min">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.doubleMinBob?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_doubleMaxBob">Double Max Bob</label>
+                    <input type="number" class="form-control" name="doubleMaxBob" id="field_doubleMaxBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.doubleMaxBob" max="100" jhiMax="100"/>
+                    <div [hidden]="!(editForm.controls.doubleMaxBob?.dirty && editForm.controls.doubleMaxBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.doubleMaxBob?.errors?.max">
+                            This field cannot be more than 100.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.doubleMaxBob?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bigDecimalRequiredBob">Big Decimal Required Bob</label>
+                    <input type="number" class="form-control" name="bigDecimalRequiredBob" id="field_bigDecimalRequiredBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.bigDecimalRequiredBob" required/>
+                    <div [hidden]="!(editForm.controls.bigDecimalRequiredBob?.dirty && editForm.controls.bigDecimalRequiredBob?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.bigDecimalRequiredBob?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.bigDecimalRequiredBob?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bigDecimalMinBob">Big Decimal Min Bob</label>
+                    <input type="number" class="form-control" name="bigDecimalMinBob" id="field_bigDecimalMinBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.bigDecimalMinBob" min="0" jhiMin="0"/>
+                    <div [hidden]="!(editForm.controls.bigDecimalMinBob?.dirty && editForm.controls.bigDecimalMinBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.bigDecimalMinBob?.errors?.min">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.bigDecimalMinBob?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bigDecimalMaxBob">Big Decimal Max Bob</label>
+                    <input type="number" class="form-control" name="bigDecimalMaxBob" id="field_bigDecimalMaxBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.bigDecimalMaxBob" max="100" jhiMax="100"/>
+                    <div [hidden]="!(editForm.controls.bigDecimalMaxBob?.dirty && editForm.controls.bigDecimalMaxBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.bigDecimalMaxBob?.errors?.max">
+                            This field cannot be more than 100.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.bigDecimalMaxBob?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_localDateBob">Local Date Bob</label>
+                    <div class="input-group">
+                        <input id="field_localDateBob" type="text" class="form-control" name="localDateBob" ngbDatepicker  #localDateBobDp="ngbDatepicker" [(ngModel)]="fieldTestServiceClassEntity.localDateBob"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="localDateBobDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_localDateRequiredBob">Local Date Required Bob</label>
+                    <div class="input-group">
+                        <input id="field_localDateRequiredBob" type="text" class="form-control" name="localDateRequiredBob" ngbDatepicker  #localDateRequiredBobDp="ngbDatepicker" [(ngModel)]="fieldTestServiceClassEntity.localDateRequiredBob"
+                        required/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="localDateRequiredBobDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div [hidden]="!(editForm.controls.localDateRequiredBob?.dirty && editForm.controls.localDateRequiredBob?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.localDateRequiredBob?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_instantBob">Instant Bob</label>
+                    <div class="d-flex">
+                        <input id="field_instantBob" type="datetime-local" class="form-control" name="instantBob" [(ngModel)]="instantBob"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_instanteRequiredBob">Instante Required Bob</label>
+                    <div class="d-flex">
+                        <input id="field_instanteRequiredBob" type="datetime-local" class="form-control" name="instanteRequiredBob" [(ngModel)]="instanteRequiredBob"
+                        required/>
+                    </div>
+                    <div [hidden]="!(editForm.controls.instanteRequiredBob?.dirty && editForm.controls.instanteRequiredBob?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.instanteRequiredBob?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.instanteRequiredBob?.errors?.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_zonedDateTimeBob">Zoned Date Time Bob</label>
+                    <div class="d-flex">
+                        <input id="field_zonedDateTimeBob" type="datetime-local" class="form-control" name="zonedDateTimeBob" [(ngModel)]="zonedDateTimeBob"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_zonedDateTimeRequiredBob">Zoned Date Time Required Bob</label>
+                    <div class="d-flex">
+                        <input id="field_zonedDateTimeRequiredBob" type="datetime-local" class="form-control" name="zonedDateTimeRequiredBob" [(ngModel)]="zonedDateTimeRequiredBob"
+                        required/>
+                    </div>
+                    <div [hidden]="!(editForm.controls.zonedDateTimeRequiredBob?.dirty && editForm.controls.zonedDateTimeRequiredBob?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.zonedDateTimeRequiredBob?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.zonedDateTimeRequiredBob?.errors?.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_booleanBob">Boolean Bob</label>
+                    <input type="checkbox" class="form-control" name="booleanBob" id="field_booleanBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.booleanBob" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_booleanRequiredBob">Boolean Required Bob</label>
+                    <input type="checkbox" class="form-control" name="booleanRequiredBob" id="field_booleanRequiredBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.booleanRequiredBob" />
+                    <div [hidden]="!(editForm.controls.booleanRequiredBob?.dirty && editForm.controls.booleanRequiredBob?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.booleanRequiredBob?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_enumBob">Enum Bob</label>
+                    <select class="form-control" name="enumBob" [(ngModel)]="fieldTestServiceClassEntity.enumBob" id="field_enumBob" >
+                        <option value="ENUM_VALUE_1">ENUM_VALUE_1</option>
+                        <option value="ENUM_VALUE_2">ENUM_VALUE_2</option>
+                        <option value="ENUM_VALUE_3">ENUM_VALUE_3</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_enumRequiredBob">Enum Required Bob</label>
+                    <select class="form-control" name="enumRequiredBob" [(ngModel)]="fieldTestServiceClassEntity.enumRequiredBob" id="field_enumRequiredBob"  required>
+                        <option value="ENUM_VALUE_1">ENUM_VALUE_1</option>
+                        <option value="ENUM_VALUE_2">ENUM_VALUE_2</option>
+                        <option value="ENUM_VALUE_3">ENUM_VALUE_3</option>
+                    </select>
+                    <div [hidden]="!(editForm.controls.enumRequiredBob?.dirty && editForm.controls.enumRequiredBob?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.enumRequiredBob?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_byteImageBob">Byte Image Bob</label>
+                    <div>
+                        <img [src]="'data:' + fieldTestServiceClassEntity.byteImageBobContentType + ';base64,' + fieldTestServiceClassEntity.byteImageBob" style="max-height: 100px;" *ngIf="fieldTestServiceClassEntity.byteImageBob" alt="fieldTestServiceClassEntity image"/>
+                        <div *ngIf="fieldTestServiceClassEntity.byteImageBob" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{fieldTestServiceClassEntity.byteImageBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteImageBob)}}</span>
+                            <button type="button" (click)="clearInputImage('byteImageBob', 'byteImageBobContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_byteImageBob" (change)="setFileData($event, fieldTestServiceClassEntity, 'byteImageBob', true)" accept="image/*"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="byteImageBob" id="field_byteImageBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteImageBob" />
+                    <input type="hidden" class="form-control" name="byteImageBobContentType" id="field_byteImageBobContentType"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteImageBobContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_byteImageRequiredBob">Byte Image Required Bob</label>
+                    <div>
+                        <img [src]="'data:' + fieldTestServiceClassEntity.byteImageRequiredBobContentType + ';base64,' + fieldTestServiceClassEntity.byteImageRequiredBob" style="max-height: 100px;" *ngIf="fieldTestServiceClassEntity.byteImageRequiredBob" alt="fieldTestServiceClassEntity image"/>
+                        <div *ngIf="fieldTestServiceClassEntity.byteImageRequiredBob" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{fieldTestServiceClassEntity.byteImageRequiredBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteImageRequiredBob)}}</span>
+                            <button type="button" (click)="clearInputImage('byteImageRequiredBob', 'byteImageRequiredBobContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_byteImageRequiredBob" (change)="setFileData($event, fieldTestServiceClassEntity, 'byteImageRequiredBob', true)" accept="image/*"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="byteImageRequiredBob" id="field_byteImageRequiredBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteImageRequiredBob" required/>
+                    <input type="hidden" class="form-control" name="byteImageRequiredBobContentType" id="field_byteImageRequiredBobContentType"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteImageRequiredBobContentType" />
+                    <div [hidden]="!(editForm.controls.byteImageRequiredBob?.dirty && editForm.controls.byteImageRequiredBob?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.byteImageRequiredBob?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_byteImageMinbytesBob">Byte Image Minbytes Bob</label>
+                    <div>
+                        <img [src]="'data:' + fieldTestServiceClassEntity.byteImageMinbytesBobContentType + ';base64,' + fieldTestServiceClassEntity.byteImageMinbytesBob" style="max-height: 100px;" *ngIf="fieldTestServiceClassEntity.byteImageMinbytesBob" alt="fieldTestServiceClassEntity image"/>
+                        <div *ngIf="fieldTestServiceClassEntity.byteImageMinbytesBob" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{fieldTestServiceClassEntity.byteImageMinbytesBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteImageMinbytesBob)}}</span>
+                            <button type="button" (click)="clearInputImage('byteImageMinbytesBob', 'byteImageMinbytesBobContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_byteImageMinbytesBob" (change)="setFileData($event, fieldTestServiceClassEntity, 'byteImageMinbytesBob', true)" accept="image/*"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="byteImageMinbytesBob" id="field_byteImageMinbytesBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteImageMinbytesBob" minbytes="0"/>
+                    <input type="hidden" class="form-control" name="byteImageMinbytesBobContentType" id="field_byteImageMinbytesBobContentType"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteImageMinbytesBobContentType" />
+                    <div [hidden]="!(editForm.controls.byteImageMinbytesBob?.dirty && editForm.controls.byteImageMinbytesBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.byteImageMinbytesBob?.errors?.minbytes">
+                            This field should be at least 0.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_byteImageMaxbytesBob">Byte Image Maxbytes Bob</label>
+                    <div>
+                        <img [src]="'data:' + fieldTestServiceClassEntity.byteImageMaxbytesBobContentType + ';base64,' + fieldTestServiceClassEntity.byteImageMaxbytesBob" style="max-height: 100px;" *ngIf="fieldTestServiceClassEntity.byteImageMaxbytesBob" alt="fieldTestServiceClassEntity image"/>
+                        <div *ngIf="fieldTestServiceClassEntity.byteImageMaxbytesBob" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{fieldTestServiceClassEntity.byteImageMaxbytesBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteImageMaxbytesBob)}}</span>
+                            <button type="button" (click)="clearInputImage('byteImageMaxbytesBob', 'byteImageMaxbytesBobContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_byteImageMaxbytesBob" (change)="setFileData($event, fieldTestServiceClassEntity, 'byteImageMaxbytesBob', true)" accept="image/*"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="byteImageMaxbytesBob" id="field_byteImageMaxbytesBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteImageMaxbytesBob" maxbytes="10000"/>
+                    <input type="hidden" class="form-control" name="byteImageMaxbytesBobContentType" id="field_byteImageMaxbytesBobContentType"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteImageMaxbytesBobContentType" />
+                    <div [hidden]="!(editForm.controls.byteImageMaxbytesBob?.dirty && editForm.controls.byteImageMaxbytesBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.byteImageMaxbytesBob?.errors?.maxbytes">
+                            This field cannot be more than 10000.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_byteAnyBob">Byte Any Bob</label>
+                    <div>
+                        <div *ngIf="fieldTestServiceClassEntity.byteAnyBob" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(fieldTestServiceClassEntity.byteAnyBobContentType, fieldTestServiceClassEntity.byteAnyBob)">open</a><br>
+                            <span class="pull-left">{{fieldTestServiceClassEntity.byteAnyBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteAnyBob)}}</span>
+                            <button type="button" (click)="fieldTestServiceClassEntity.byteAnyBob=null;fieldTestServiceClassEntity.byteAnyBobContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_byteAnyBob" (change)="setFileData($event, fieldTestServiceClassEntity, 'byteAnyBob', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="byteAnyBob" id="field_byteAnyBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteAnyBob" />
+                    <input type="hidden" class="form-control" name="byteAnyBobContentType" id="field_byteAnyBobContentType"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteAnyBobContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_byteAnyRequiredBob">Byte Any Required Bob</label>
+                    <div>
+                        <div *ngIf="fieldTestServiceClassEntity.byteAnyRequiredBob" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(fieldTestServiceClassEntity.byteAnyRequiredBobContentType, fieldTestServiceClassEntity.byteAnyRequiredBob)">open</a><br>
+                            <span class="pull-left">{{fieldTestServiceClassEntity.byteAnyRequiredBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteAnyRequiredBob)}}</span>
+                            <button type="button" (click)="fieldTestServiceClassEntity.byteAnyRequiredBob=null;fieldTestServiceClassEntity.byteAnyRequiredBobContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_byteAnyRequiredBob" (change)="setFileData($event, fieldTestServiceClassEntity, 'byteAnyRequiredBob', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="byteAnyRequiredBob" id="field_byteAnyRequiredBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteAnyRequiredBob" required/>
+                    <input type="hidden" class="form-control" name="byteAnyRequiredBobContentType" id="field_byteAnyRequiredBobContentType"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteAnyRequiredBobContentType" />
+                    <div [hidden]="!(editForm.controls.byteAnyRequiredBob?.dirty && editForm.controls.byteAnyRequiredBob?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.byteAnyRequiredBob?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_byteAnyMinbytesBob">Byte Any Minbytes Bob</label>
+                    <div>
+                        <div *ngIf="fieldTestServiceClassEntity.byteAnyMinbytesBob" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(fieldTestServiceClassEntity.byteAnyMinbytesBobContentType, fieldTestServiceClassEntity.byteAnyMinbytesBob)">open</a><br>
+                            <span class="pull-left">{{fieldTestServiceClassEntity.byteAnyMinbytesBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteAnyMinbytesBob)}}</span>
+                            <button type="button" (click)="fieldTestServiceClassEntity.byteAnyMinbytesBob=null;fieldTestServiceClassEntity.byteAnyMinbytesBobContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_byteAnyMinbytesBob" (change)="setFileData($event, fieldTestServiceClassEntity, 'byteAnyMinbytesBob', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="byteAnyMinbytesBob" id="field_byteAnyMinbytesBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteAnyMinbytesBob" minbytes="0"/>
+                    <input type="hidden" class="form-control" name="byteAnyMinbytesBobContentType" id="field_byteAnyMinbytesBobContentType"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteAnyMinbytesBobContentType" />
+                    <div [hidden]="!(editForm.controls.byteAnyMinbytesBob?.dirty && editForm.controls.byteAnyMinbytesBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.byteAnyMinbytesBob?.errors?.minbytes">
+                            This field should be at least 0.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_byteAnyMaxbytesBob">Byte Any Maxbytes Bob</label>
+                    <div>
+                        <div *ngIf="fieldTestServiceClassEntity.byteAnyMaxbytesBob" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(fieldTestServiceClassEntity.byteAnyMaxbytesBobContentType, fieldTestServiceClassEntity.byteAnyMaxbytesBob)">open</a><br>
+                            <span class="pull-left">{{fieldTestServiceClassEntity.byteAnyMaxbytesBobContentType}}, {{byteSize(fieldTestServiceClassEntity.byteAnyMaxbytesBob)}}</span>
+                            <button type="button" (click)="fieldTestServiceClassEntity.byteAnyMaxbytesBob=null;fieldTestServiceClassEntity.byteAnyMaxbytesBobContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_byteAnyMaxbytesBob" (change)="setFileData($event, fieldTestServiceClassEntity, 'byteAnyMaxbytesBob', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="byteAnyMaxbytesBob" id="field_byteAnyMaxbytesBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteAnyMaxbytesBob" maxbytes="10000"/>
+                    <input type="hidden" class="form-control" name="byteAnyMaxbytesBobContentType" id="field_byteAnyMaxbytesBobContentType"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteAnyMaxbytesBobContentType" />
+                    <div [hidden]="!(editForm.controls.byteAnyMaxbytesBob?.dirty && editForm.controls.byteAnyMaxbytesBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.byteAnyMaxbytesBob?.errors?.maxbytes">
+                            This field cannot be more than 10000.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_byteTextBob">Byte Text Bob</label>
+                    <textarea class="form-control" name="byteTextBob" id="field_byteTextBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteTextBob" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_byteTextRequiredBob">Byte Text Required Bob</label>
+                    <textarea class="form-control" name="byteTextRequiredBob" id="field_byteTextRequiredBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteTextRequiredBob" required></textarea>
+                    <div [hidden]="!(editForm.controls.byteTextRequiredBob?.dirty && editForm.controls.byteTextRequiredBob?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.byteTextRequiredBob?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_byteTextMinbytesBob">Byte Text Minbytes Bob</label>
+                    <textarea class="form-control" name="byteTextMinbytesBob" id="field_byteTextMinbytesBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteTextMinbytesBob" minbytes="0"></textarea>
+                    <div [hidden]="!(editForm.controls.byteTextMinbytesBob?.dirty && editForm.controls.byteTextMinbytesBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.byteTextMinbytesBob?.errors?.minbytes">
+                            This field should be at least 0.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_byteTextMaxbytesBob">Byte Text Maxbytes Bob</label>
+                    <textarea class="form-control" name="byteTextMaxbytesBob" id="field_byteTextMaxbytesBob"
+                        [(ngModel)]="fieldTestServiceClassEntity.byteTextMaxbytesBob" maxbytes="10000"></textarea>
+                    <div [hidden]="!(editForm.controls.byteTextMaxbytesBob?.dirty && editForm.controls.byteTextMaxbytesBob?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.byteTextMaxbytesBob?.errors?.maxbytes">
+                            This field cannot be more than 10000.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

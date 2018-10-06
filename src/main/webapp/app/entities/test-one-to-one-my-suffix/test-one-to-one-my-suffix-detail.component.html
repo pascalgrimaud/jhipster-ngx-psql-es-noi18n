@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="testOneToOne">
+            <h2><span>Test One To One</span> {{testOneToOne.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Test Entity</span></dt>
+                <dd>
+                    <div *ngIf="testOneToOne.testEntity">
+                        <a [routerLink]="['/test-entity-my-suffix-alt', testOneToOne.testEntity?.id, 'view']">{{testOneToOne.testEntity?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Test Mapstruct</span></dt>
+                <dd>
+                    <div *ngIf="testOneToOne.testMapstruct">
+                        <a [routerLink]="['/test-mapstruct', testOneToOne.testMapstruct?.id, 'view']">{{testOneToOne.testMapstruct?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Test Service Class</span></dt>
+                <dd>
+                    <div *ngIf="testOneToOne.testServiceClass">
+                        <a [routerLink]="['/test-service-class', testOneToOne.testServiceClass?.id, 'view']">{{testOneToOne.testServiceClass?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Test Service Impl</span></dt>
+                <dd>
+                    <div *ngIf="testOneToOne.testServiceImpl">
+                        <a [routerLink]="['/test-service-impl', testOneToOne.testServiceImpl?.id, 'view']">{{testOneToOne.testServiceImpl?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Test Infinite Scroll</span></dt>
+                <dd>
+                    <div *ngIf="testOneToOne.testInfiniteScroll">
+                        <a [routerLink]="['/test-infinite-scroll', testOneToOne.testInfiniteScroll?.id, 'view']">{{testOneToOne.testInfiniteScroll?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Test Pager</span></dt>
+                <dd>
+                    <div *ngIf="testOneToOne.testPager">
+                        <a [routerLink]="['/test-pager', testOneToOne.testPager?.id, 'view']">{{testOneToOne.testPager?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Test Pagination</span></dt>
+                <dd>
+                    <div *ngIf="testOneToOne.testPagination">
+                        <a [routerLink]="['/test-pagination', testOneToOne.testPagination?.id, 'view']">{{testOneToOne.testPagination?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Test Custom Table Name</span></dt>
+                <dd>
+                    <div *ngIf="testOneToOne.testCustomTableName">
+                        <a [routerLink]="['/test-custom-table-name', testOneToOne.testCustomTableName?.id, 'view']">{{testOneToOne.testCustomTableName?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/test-one-to-one-my-suffix', testOneToOne.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

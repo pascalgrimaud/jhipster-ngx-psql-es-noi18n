@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-test-two-relationships-same-entity-my-suffix-heading">Create or edit a Test Two Relationships Same Entity</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!testTwoRelationshipsSameEntity.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="testTwoRelationshipsSameEntity.id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_firstRelationship">First Relationship</label>
+                    <select class="form-control" id="field_firstRelationship" name="firstRelationship" [(ngModel)]="testTwoRelationshipsSameEntity.firstRelationship" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="testEntityOption.id === testTwoRelationshipsSameEntity.firstRelationship?.id ? testTwoRelationshipsSameEntity.firstRelationship : testEntityOption" *ngFor="let testEntityOption of testentities; trackBy: trackTestEntityById">{{testEntityOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_secondRelationship">Second Relationship</label>
+                    <select class="form-control" id="field_secondRelationship" name="secondRelationship" [(ngModel)]="testTwoRelationshipsSameEntity.secondRelationship" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="testEntityOption.id === testTwoRelationshipsSameEntity.secondRelationship?.id ? testTwoRelationshipsSameEntity.secondRelationship : testEntityOption" *ngFor="let testEntityOption of testentities; trackBy: trackTestEntityById">{{testEntityOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_userOne">User One</label>
+                    <select class="form-control" id="field_userOne" name="userOne" [(ngModel)]="testTwoRelationshipsSameEntity.userOne" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === testTwoRelationshipsSameEntity.userOne?.id ? testTwoRelationshipsSameEntity.userOne : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_userTwo">User Two</label>
+                    <select class="form-control" id="field_userTwo" name="userTwo" [(ngModel)]="testTwoRelationshipsSameEntity.userTwo" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === testTwoRelationshipsSameEntity.userTwo?.id ? testTwoRelationshipsSameEntity.userTwo : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_firstUniqueRequiredRelation">First Unique Required Relation</label>
+                    <select class="form-control" id="field_firstUniqueRequiredRelation" name="firstUniqueRequiredRelation" [(ngModel)]="testTwoRelationshipsSameEntity.firstUniqueRequiredRelation"  required>
+                        <option *ngIf="!editForm.value.firstUniqueRequiredRelation" [ngValue]="null" selected></option>
+                        <option [ngValue]="divisionOption.id === testTwoRelationshipsSameEntity.firstUniqueRequiredRelation?.id ? testTwoRelationshipsSameEntity.firstUniqueRequiredRelation : divisionOption" *ngFor="let divisionOption of divisions; trackBy: trackDivisionById">{{divisionOption.id}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.firstUniqueRequiredRelation?.dirty && editForm.controls.firstUniqueRequiredRelation?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.firstUniqueRequiredRelation?.errors?.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_secondUniqueRequiredRelation">Second Unique Required Relation</label>
+                    <select class="form-control" id="field_secondUniqueRequiredRelation" name="secondUniqueRequiredRelation" [(ngModel)]="testTwoRelationshipsSameEntity.secondUniqueRequiredRelation"  required>
+                        <option *ngIf="!editForm.value.secondUniqueRequiredRelation" [ngValue]="null" selected></option>
+                        <option [ngValue]="divisionOption.id === testTwoRelationshipsSameEntity.secondUniqueRequiredRelation?.id ? testTwoRelationshipsSameEntity.secondUniqueRequiredRelation : divisionOption" *ngFor="let divisionOption of divisions; trackBy: trackDivisionById">{{divisionOption.id}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.secondUniqueRequiredRelation?.dirty && editForm.controls.secondUniqueRequiredRelation?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.secondUniqueRequiredRelation?.errors?.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

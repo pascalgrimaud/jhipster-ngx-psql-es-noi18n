@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20150805124838_added_entity_BankAccount.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20150805124936_added_entity_Label.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20150805125054_added_entity_Operation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208184031_added_entity_FieldTestServiceClassEntity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208184031_added_entity_FieldTestServiceImplEntity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208184031_added_entity_FieldTestPaginationEntity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208184031_added_entity_FieldTestPagerEntity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208184031_added_entity_FieldTestMapstructEntity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208184031_added_entity_FieldTestInfiniteScrollEntity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208184031_added_entity_FieldTestEntity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_TestCustomTableName.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_TestTwoRelationshipsSameEntity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_TestServiceImpl.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_TestServiceClass.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_TestPagination.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_TestPager.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_TestMapstruct.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_TestInfiniteScroll.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_TestEntity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210534_added_entity_TestManyToMany.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210534_added_entity_TestManyRelPaginDTO.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208211440_added_entity_TestManyToOne.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208211541_added_entity_TestOneToOne.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160806123735_added_entity_EntityWithDTO.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160806123736_added_entity_EntityWithServiceClass.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160806123737_added_entity_EntityWithServiceImpl.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160806123738_added_entity_EntityWithPagination.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160806123739_added_entity_EntityWithServiceClassAndPagination.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160806123740_added_entity_EntityWithServiceImplAndPagination.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160806123741_added_entity_EntityWithServiceClassAndDTO.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160806123742_added_entity_EntityWithServiceImplAndDTO.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160806123743_added_entity_EntityWithPaginationAndDTO.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160806123744_added_entity_EntityWithServiceClassPaginationAndDTO.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160806123745_added_entity_EntityWithServiceImplPaginationAndDTO.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170626061520_added_entity_Division.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170626061521_added_entity_Place.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20150805124838_added_entity_constraints_BankAccount.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20150805125054_added_entity_constraints_Operation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_constraints_TestCustomTableName.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_constraints_TestTwoRelationshipsSameEntity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_constraints_TestServiceImpl.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_constraints_TestServiceClass.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_constraints_TestPagination.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_constraints_TestPager.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_constraints_TestMapstruct.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_constraints_TestInfiniteScroll.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210109_added_entity_constraints_TestEntity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210534_added_entity_constraints_TestManyToMany.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208210534_added_entity_constraints_TestManyRelPaginDTO.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208211440_added_entity_constraints_TestManyToOne.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20160208211541_added_entity_constraints_TestOneToOne.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170626061521_added_entity_constraints_Place.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

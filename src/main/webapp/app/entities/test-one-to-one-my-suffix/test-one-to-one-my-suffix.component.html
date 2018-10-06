@@ -1,0 +1,115 @@
+<div>
+    <h2 id="page-heading">
+        <span>Test One To Ones</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-test-one-to-one-my-suffix" [routerLink]="['/test-one-to-one-my-suffix/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down" >
+            Create new Test One To One
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Query">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="testOneToOnes">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Test Entity</span></th>
+            <th><span>Test Mapstruct</span></th>
+            <th><span>Test Service Class</span></th>
+            <th><span>Test Service Impl</span></th>
+            <th><span>Test Infinite Scroll</span></th>
+            <th><span>Test Pager</span></th>
+            <th><span>Test Pagination</span></th>
+            <th><span>Test Custom Table Name</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let testOneToOne of testOneToOnes ;trackBy: trackId">
+                <td><a [routerLink]="['/test-one-to-one-my-suffix', testOneToOne.id, 'view' ]">{{testOneToOne.id}}</a></td>
+                <td>
+                    <div *ngIf="testOneToOne.testEntity">
+                        <a [routerLink]="['../test-entity-my-suffix-alt', testOneToOne.testEntity?.id, 'view' ]" >{{testOneToOne.testEntity?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="testOneToOne.testMapstruct">
+                        <a [routerLink]="['../test-mapstruct', testOneToOne.testMapstruct?.id, 'view' ]" >{{testOneToOne.testMapstruct?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="testOneToOne.testServiceClass">
+                        <a [routerLink]="['../test-service-class', testOneToOne.testServiceClass?.id, 'view' ]" >{{testOneToOne.testServiceClass?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="testOneToOne.testServiceImpl">
+                        <a [routerLink]="['../test-service-impl', testOneToOne.testServiceImpl?.id, 'view' ]" >{{testOneToOne.testServiceImpl?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="testOneToOne.testInfiniteScroll">
+                        <a [routerLink]="['../test-infinite-scroll', testOneToOne.testInfiniteScroll?.id, 'view' ]" >{{testOneToOne.testInfiniteScroll?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="testOneToOne.testPager">
+                        <a [routerLink]="['../test-pager', testOneToOne.testPager?.id, 'view' ]" >{{testOneToOne.testPager?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="testOneToOne.testPagination">
+                        <a [routerLink]="['../test-pagination', testOneToOne.testPagination?.id, 'view' ]" >{{testOneToOne.testPagination?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="testOneToOne.testCustomTableName">
+                        <a [routerLink]="['../test-custom-table-name', testOneToOne.testCustomTableName?.id, 'view' ]" >{{testOneToOne.testCustomTableName?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/test-one-to-one-my-suffix', testOneToOne.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/test-one-to-one-my-suffix', testOneToOne.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'test-one-to-one-my-suffix/'+ testOneToOne.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

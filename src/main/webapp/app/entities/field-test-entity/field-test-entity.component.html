@@ -1,0 +1,189 @@
+<div>
+    <h2 id="page-heading">
+        <span>Field Test Entities</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-field-test-entity" [routerLink]="['/field-test-entity/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down" >
+            Create new Field Test Entity
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="Query">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="fieldTestEntities">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>String Tom</span></th>
+            <th><span>String Required Tom</span></th>
+            <th><span>String Minlength Tom</span></th>
+            <th><span>String Maxlength Tom</span></th>
+            <th><span>String Pattern Tom</span></th>
+            <th><span>Integer Tom</span></th>
+            <th><span>Integer Required Tom</span></th>
+            <th><span>Integer Min Tom</span></th>
+            <th><span>Integer Max Tom</span></th>
+            <th><span>Long Tom</span></th>
+            <th><span>Long Required Tom</span></th>
+            <th><span>Long Min Tom</span></th>
+            <th><span>Long Max Tom</span></th>
+            <th><span>Float Tom</span></th>
+            <th><span>Float Required Tom</span></th>
+            <th><span>Float Min Tom</span></th>
+            <th><span>Float Max Tom</span></th>
+            <th><span>Double Required Tom</span></th>
+            <th><span>Double Min Tom</span></th>
+            <th><span>Double Max Tom</span></th>
+            <th><span>Big Decimal Required Tom</span></th>
+            <th><span>Big Decimal Min Tom</span></th>
+            <th><span>Big Decimal Max Tom</span></th>
+            <th><span>Local Date Tom</span></th>
+            <th><span>Local Date Required Tom</span></th>
+            <th><span>Instant Tom</span></th>
+            <th><span>Instant Required Tom</span></th>
+            <th><span>Zoned Date Time Tom</span></th>
+            <th><span>Zoned Date Time Required Tom</span></th>
+            <th><span>Boolean Tom</span></th>
+            <th><span>Boolean Required Tom</span></th>
+            <th><span>Enum Tom</span></th>
+            <th><span>Enum Required Tom</span></th>
+            <th><span>Byte Image Tom</span></th>
+            <th><span>Byte Image Required Tom</span></th>
+            <th><span>Byte Image Minbytes Tom</span></th>
+            <th><span>Byte Image Maxbytes Tom</span></th>
+            <th><span>Byte Any Tom</span></th>
+            <th><span>Byte Any Required Tom</span></th>
+            <th><span>Byte Any Minbytes Tom</span></th>
+            <th><span>Byte Any Maxbytes Tom</span></th>
+            <th><span>Byte Text Tom</span></th>
+            <th><span>Byte Text Required Tom</span></th>
+            <th><span>Byte Text Minbytes Tom</span></th>
+            <th><span>Byte Text Maxbytes Tom</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let fieldTestEntity of fieldTestEntities ;trackBy: trackId">
+                <td><a [routerLink]="['/field-test-entity', fieldTestEntity.id, 'view' ]">{{fieldTestEntity.id}}</a></td>
+                <td>{{fieldTestEntity.stringTom}}</td>
+                <td>{{fieldTestEntity.stringRequiredTom}}</td>
+                <td>{{fieldTestEntity.stringMinlengthTom}}</td>
+                <td>{{fieldTestEntity.stringMaxlengthTom}}</td>
+                <td>{{fieldTestEntity.stringPatternTom}}</td>
+                <td>{{fieldTestEntity.integerTom}}</td>
+                <td>{{fieldTestEntity.integerRequiredTom}}</td>
+                <td>{{fieldTestEntity.integerMinTom}}</td>
+                <td>{{fieldTestEntity.integerMaxTom}}</td>
+                <td>{{fieldTestEntity.longTom}}</td>
+                <td>{{fieldTestEntity.longRequiredTom}}</td>
+                <td>{{fieldTestEntity.longMinTom}}</td>
+                <td>{{fieldTestEntity.longMaxTom}}</td>
+                <td>{{fieldTestEntity.floatTom}}</td>
+                <td>{{fieldTestEntity.floatRequiredTom}}</td>
+                <td>{{fieldTestEntity.floatMinTom}}</td>
+                <td>{{fieldTestEntity.floatMaxTom}}</td>
+                <td>{{fieldTestEntity.doubleRequiredTom}}</td>
+                <td>{{fieldTestEntity.doubleMinTom}}</td>
+                <td>{{fieldTestEntity.doubleMaxTom}}</td>
+                <td>{{fieldTestEntity.bigDecimalRequiredTom}}</td>
+                <td>{{fieldTestEntity.bigDecimalMinTom}}</td>
+                <td>{{fieldTestEntity.bigDecimalMaxTom}}</td>
+                <td>{{fieldTestEntity.localDateTom | date:'mediumDate'}}</td>
+                <td>{{fieldTestEntity.localDateRequiredTom | date:'mediumDate'}}</td>
+                <td>{{fieldTestEntity.instantTom | date:'medium'}}</td>
+                <td>{{fieldTestEntity.instantRequiredTom | date:'medium'}}</td>
+                <td>{{fieldTestEntity.zonedDateTimeTom | date:'medium'}}</td>
+                <td>{{fieldTestEntity.zonedDateTimeRequiredTom | date:'medium'}}</td>
+                <td>{{fieldTestEntity.booleanTom}}</td>
+                <td>{{fieldTestEntity.booleanRequiredTom}}</td>
+                <td>{{fieldTestEntity.enumTom}}</td>
+                <td>{{fieldTestEntity.enumRequiredTom}}</td>
+                <td>
+                    <a *ngIf="fieldTestEntity.byteImageTom" (click)="openFile(fieldTestEntity.byteImageTomContentType, fieldTestEntity.byteImageTom)">
+                        <img [src]="'data:' + fieldTestEntity.byteImageTomContentType + ';base64,' + fieldTestEntity.byteImageTom" style="max-height: 30px;" alt="fieldTestEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestEntity.byteImageTom">{{fieldTestEntity.byteImageTomContentType}}, {{byteSize(fieldTestEntity.byteImageTom)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestEntity.byteImageRequiredTom" (click)="openFile(fieldTestEntity.byteImageRequiredTomContentType, fieldTestEntity.byteImageRequiredTom)">
+                        <img [src]="'data:' + fieldTestEntity.byteImageRequiredTomContentType + ';base64,' + fieldTestEntity.byteImageRequiredTom" style="max-height: 30px;" alt="fieldTestEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestEntity.byteImageRequiredTom">{{fieldTestEntity.byteImageRequiredTomContentType}}, {{byteSize(fieldTestEntity.byteImageRequiredTom)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestEntity.byteImageMinbytesTom" (click)="openFile(fieldTestEntity.byteImageMinbytesTomContentType, fieldTestEntity.byteImageMinbytesTom)">
+                        <img [src]="'data:' + fieldTestEntity.byteImageMinbytesTomContentType + ';base64,' + fieldTestEntity.byteImageMinbytesTom" style="max-height: 30px;" alt="fieldTestEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestEntity.byteImageMinbytesTom">{{fieldTestEntity.byteImageMinbytesTomContentType}}, {{byteSize(fieldTestEntity.byteImageMinbytesTom)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestEntity.byteImageMaxbytesTom" (click)="openFile(fieldTestEntity.byteImageMaxbytesTomContentType, fieldTestEntity.byteImageMaxbytesTom)">
+                        <img [src]="'data:' + fieldTestEntity.byteImageMaxbytesTomContentType + ';base64,' + fieldTestEntity.byteImageMaxbytesTom" style="max-height: 30px;" alt="fieldTestEntity image"/>
+                    </a>
+                    <span *ngIf="fieldTestEntity.byteImageMaxbytesTom">{{fieldTestEntity.byteImageMaxbytesTomContentType}}, {{byteSize(fieldTestEntity.byteImageMaxbytesTom)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestEntity.byteAnyTom" (click)="openFile(fieldTestEntity.byteAnyTomContentType, fieldTestEntity.byteAnyTom)">open</a>
+                    <span *ngIf="fieldTestEntity.byteAnyTom">{{fieldTestEntity.byteAnyTomContentType}}, {{byteSize(fieldTestEntity.byteAnyTom)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestEntity.byteAnyRequiredTom" (click)="openFile(fieldTestEntity.byteAnyRequiredTomContentType, fieldTestEntity.byteAnyRequiredTom)">open</a>
+                    <span *ngIf="fieldTestEntity.byteAnyRequiredTom">{{fieldTestEntity.byteAnyRequiredTomContentType}}, {{byteSize(fieldTestEntity.byteAnyRequiredTom)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestEntity.byteAnyMinbytesTom" (click)="openFile(fieldTestEntity.byteAnyMinbytesTomContentType, fieldTestEntity.byteAnyMinbytesTom)">open</a>
+                    <span *ngIf="fieldTestEntity.byteAnyMinbytesTom">{{fieldTestEntity.byteAnyMinbytesTomContentType}}, {{byteSize(fieldTestEntity.byteAnyMinbytesTom)}}</span>
+                </td>
+                <td>
+                    <a *ngIf="fieldTestEntity.byteAnyMaxbytesTom" (click)="openFile(fieldTestEntity.byteAnyMaxbytesTomContentType, fieldTestEntity.byteAnyMaxbytesTom)">open</a>
+                    <span *ngIf="fieldTestEntity.byteAnyMaxbytesTom">{{fieldTestEntity.byteAnyMaxbytesTomContentType}}, {{byteSize(fieldTestEntity.byteAnyMaxbytesTom)}}</span>
+                </td>
+                <td>{{fieldTestEntity.byteTextTom}}</td>
+                <td>{{fieldTestEntity.byteTextRequiredTom}}</td>
+                <td>{{fieldTestEntity.byteTextMinbytesTom}}</td>
+                <td>{{fieldTestEntity.byteTextMaxbytesTom}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/field-test-entity', fieldTestEntity.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/field-test-entity', fieldTestEntity.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'field-test-entity/'+ fieldTestEntity.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

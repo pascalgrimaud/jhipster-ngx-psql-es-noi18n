@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-test-custom-table-name-heading">Create or edit a Test Custom Table Name</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!testCustomTableName.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="testCustomTableName.id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_testEntity">Test Entity</label>
+                    <select class="form-control" id="field_testEntity" name="testEntity" [(ngModel)]="testCustomTableName.testEntity"  required>
+                        <option *ngIf="!editForm.value.testEntity" [ngValue]="null" selected></option>
+                        <option [ngValue]="testEntityOption.id === testCustomTableName.testEntity?.id ? testCustomTableName.testEntity : testEntityOption" *ngFor="let testEntityOption of testentities; trackBy: trackTestEntityById">{{testEntityOption.id}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.testEntity?.dirty && editForm.controls.testEntity?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.testEntity?.errors?.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_userOneToMany">User One To Many</label>
+                    <select class="form-control" id="field_userOneToMany" name="userOneToMany" [(ngModel)]="testCustomTableName.userOneToMany" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === testCustomTableName.userOneToMany?.id ? testCustomTableName.userOneToMany : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="field_userManyToMany">User Many To Many</label>
+                    <select class="form-control" id="field_userManyToMany" multiple name="userManyToMany" [(ngModel)]="testCustomTableName.userManyToManies">
+                        <option [ngValue]="getSelected(testCustomTableName.userManyToManies, userOption)" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_userOneToOne">User One To One</label>
+                    <select class="form-control" id="field_userOneToOne" name="userOneToOne" [(ngModel)]="testCustomTableName.userOneToOne" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === testCustomTableName.userOneToOne?.id ? testCustomTableName.userOneToOne : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

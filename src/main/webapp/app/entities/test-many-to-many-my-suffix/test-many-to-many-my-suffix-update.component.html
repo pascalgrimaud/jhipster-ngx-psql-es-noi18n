@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-test-many-to-many-my-suffix-heading">Create or edit a Test Many To Many</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!testManyToMany.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="testManyToMany.id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label for="field_testEntity">Test Entity</label>
+                    <select class="form-control" id="field_testEntity" multiple name="testEntity" [(ngModel)]="testManyToMany.testEntities">
+                        <option [ngValue]="getSelected(testManyToMany.testEntities, testEntityOption)" *ngFor="let testEntityOption of testentities; trackBy: trackTestEntityById">{{testEntityOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="field_testMapstruct">Test Mapstruct</label>
+                    <select class="form-control" id="field_testMapstruct" multiple name="testMapstruct" [(ngModel)]="testManyToMany.testMapstructs">
+                        <option [ngValue]="getSelected(testManyToMany.testMapstructs, testMapstructOption)" *ngFor="let testMapstructOption of testmapstructs; trackBy: trackTestMapstructById">{{testMapstructOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="field_testServiceClass">Test Service Class</label>
+                    <select class="form-control" id="field_testServiceClass" multiple name="testServiceClass" [(ngModel)]="testManyToMany.testServiceClasses">
+                        <option [ngValue]="getSelected(testManyToMany.testServiceClasses, testServiceClassOption)" *ngFor="let testServiceClassOption of testserviceclasses; trackBy: trackTestServiceClassById">{{testServiceClassOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="field_testServiceImpl">Test Service Impl</label>
+                    <select class="form-control" id="field_testServiceImpl" multiple name="testServiceImpl" [(ngModel)]="testManyToMany.testServiceImpls">
+                        <option [ngValue]="getSelected(testManyToMany.testServiceImpls, testServiceImplOption)" *ngFor="let testServiceImplOption of testserviceimpls; trackBy: trackTestServiceImplById">{{testServiceImplOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="field_testInfiniteScroll">Test Infinite Scroll</label>
+                    <select class="form-control" id="field_testInfiniteScroll" multiple name="testInfiniteScroll" [(ngModel)]="testManyToMany.testInfiniteScrolls">
+                        <option [ngValue]="getSelected(testManyToMany.testInfiniteScrolls, testInfiniteScrollOption)" *ngFor="let testInfiniteScrollOption of testinfinitescrolls; trackBy: trackTestInfiniteScrollById">{{testInfiniteScrollOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="field_testPager">Test Pager</label>
+                    <select class="form-control" id="field_testPager" multiple name="testPager" [(ngModel)]="testManyToMany.testPagers">
+                        <option [ngValue]="getSelected(testManyToMany.testPagers, testPagerOption)" *ngFor="let testPagerOption of testpagers; trackBy: trackTestPagerById">{{testPagerOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="field_testPagination">Test Pagination</label>
+                    <select class="form-control" id="field_testPagination" multiple name="testPagination" [(ngModel)]="testManyToMany.testPaginations">
+                        <option [ngValue]="getSelected(testManyToMany.testPaginations, testPaginationOption)" *ngFor="let testPaginationOption of testpaginations; trackBy: trackTestPaginationById">{{testPaginationOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="field_testCustomTableName">Test Custom Table Name</label>
+                    <select class="form-control" id="field_testCustomTableName" multiple name="testCustomTableName" [(ngModel)]="testManyToMany.testCustomTableNames">
+                        <option [ngValue]="getSelected(testManyToMany.testCustomTableNames, testCustomTableNameOption)" *ngFor="let testCustomTableNameOption of testcustomtablenames; trackBy: trackTestCustomTableNameById">{{testCustomTableNameOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

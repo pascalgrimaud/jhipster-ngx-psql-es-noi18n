@@ -1,0 +1,11 @@
+version: '2'
+services:
+    travispsqlesnoi18n-postgresql:
+        image: postgres:10.4
+        # volumes:
+        #     - ~/volumes/jhipster/travisPsqlEsNoi18n/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=travisPsqlEsNoi18n
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

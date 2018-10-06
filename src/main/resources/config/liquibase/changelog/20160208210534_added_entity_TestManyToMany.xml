@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity TestManyToMany.
+    -->
+    <changeSet id="20160208210534-1" author="jhipster">
+        <createTable tableName="test_many_to_many">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+        <createTable tableName="test_many_to_many_test_entity">
+            <column name="test_entities_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="test_many_to_manies_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="test_many_to_manies_id, test_entities_id" tableName="test_many_to_many_test_entity"/>
+        
+        <createTable tableName="test_many_to_many_test_mapstruct">
+            <column name="test_mapstructs_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="test_many_to_manies_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="test_many_to_manies_id, test_mapstructs_id" tableName="test_many_to_many_test_mapstruct"/>
+        
+        <createTable tableName="test_many_to_many_test_service_class">
+            <column name="test_service_classes_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="test_many_to_manies_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="test_many_to_manies_id, test_service_classes_id" tableName="test_many_to_many_test_service_class"/>
+        
+        <createTable tableName="test_many_to_many_test_service_impl">
+            <column name="test_service_impls_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="test_many_to_manies_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="test_many_to_manies_id, test_service_impls_id" tableName="test_many_to_many_test_service_impl"/>
+        
+        <createTable tableName="test_many_to_many_test_infinite_scroll">
+            <column name="test_infinite_scrolls_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="test_many_to_manies_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="test_many_to_manies_id, test_infinite_scrolls_id" tableName="test_many_to_many_test_infinite_scroll"/>
+        
+        <createTable tableName="test_many_to_many_test_pager">
+            <column name="test_pagers_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="test_many_to_manies_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="test_many_to_manies_id, test_pagers_id" tableName="test_many_to_many_test_pager"/>
+        
+        <createTable tableName="test_many_to_many_test_pagination">
+            <column name="test_paginations_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="test_many_to_manies_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="test_many_to_manies_id, test_paginations_id" tableName="test_many_to_many_test_pagination"/>
+        
+        <createTable tableName="test_many_to_many_test_custom_table_name">
+            <column name="test_custom_table_names_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="test_many_to_manies_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="test_many_to_manies_id, test_custom_table_names_id" tableName="test_many_to_many_test_custom_table_name"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

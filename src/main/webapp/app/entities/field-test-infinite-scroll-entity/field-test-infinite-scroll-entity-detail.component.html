@@ -1,0 +1,235 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fieldTestInfiniteScrollEntity">
+            <h2><span>Field Test Infinite Scroll Entity</span> {{fieldTestInfiniteScrollEntity.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>String Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.stringHugo}}</span>
+                </dd>
+                <dt><span>String Required Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.stringRequiredHugo}}</span>
+                </dd>
+                <dt><span>String Minlength Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.stringMinlengthHugo}}</span>
+                </dd>
+                <dt><span>String Maxlength Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.stringMaxlengthHugo}}</span>
+                </dd>
+                <dt><span>String Pattern Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.stringPatternHugo}}</span>
+                </dd>
+                <dt><span>Integer Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.integerHugo}}</span>
+                </dd>
+                <dt><span>Integer Required Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.integerRequiredHugo}}</span>
+                </dd>
+                <dt><span>Integer Min Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.integerMinHugo}}</span>
+                </dd>
+                <dt><span>Integer Max Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.integerMaxHugo}}</span>
+                </dd>
+                <dt><span>Long Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.longHugo}}</span>
+                </dd>
+                <dt><span>Long Required Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.longRequiredHugo}}</span>
+                </dd>
+                <dt><span>Long Min Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.longMinHugo}}</span>
+                </dd>
+                <dt><span>Long Max Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.longMaxHugo}}</span>
+                </dd>
+                <dt><span>Float Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.floatHugo}}</span>
+                </dd>
+                <dt><span>Float Required Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.floatRequiredHugo}}</span>
+                </dd>
+                <dt><span>Float Min Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.floatMinHugo}}</span>
+                </dd>
+                <dt><span>Float Max Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.floatMaxHugo}}</span>
+                </dd>
+                <dt><span>Double Required Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.doubleRequiredHugo}}</span>
+                </dd>
+                <dt><span>Double Min Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.doubleMinHugo}}</span>
+                </dd>
+                <dt><span>Double Max Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.doubleMaxHugo}}</span>
+                </dd>
+                <dt><span>Big Decimal Required Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.bigDecimalRequiredHugo}}</span>
+                </dd>
+                <dt><span>Big Decimal Min Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.bigDecimalMinHugo}}</span>
+                </dd>
+                <dt><span>Big Decimal Max Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.bigDecimalMaxHugo}}</span>
+                </dd>
+                <dt><span>Local Date Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.localDateHugo}}</span>
+                </dd>
+                <dt><span>Local Date Required Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.localDateRequiredHugo}}</span>
+                </dd>
+                <dt><span>Instant Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.instantHugo}}</span>
+                </dd>
+                <dt><span>Instante Required Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.instanteRequiredHugo}}</span>
+                </dd>
+                <dt><span>Zoned Date Time Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.zonedDateTimeHugo}}</span>
+                </dd>
+                <dt><span>Zoned Date Time Required Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.zonedDateTimeRequiredHugo}}</span>
+                </dd>
+                <dt><span>Boolean Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.booleanHugo}}</span>
+                </dd>
+                <dt><span>Boolean Required Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.booleanRequiredHugo}}</span>
+                </dd>
+                <dt><span>Enum Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.enumHugo}}</span>
+                </dd>
+                <dt><span>Enum Required Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.enumRequiredHugo}}</span>
+                </dd>
+                <dt><span>Byte Image Hugo</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestInfiniteScrollEntity.byteImageHugo">
+                        <a (click)="openFile(fieldTestInfiniteScrollEntity.byteImageHugoContentType, fieldTestInfiniteScrollEntity.byteImageHugo)">
+                            <img [src]="'data:' + fieldTestInfiniteScrollEntity.byteImageHugoContentType + ';base64,' + fieldTestInfiniteScrollEntity.byteImageHugo" style="max-width: 100%;" alt="fieldTestInfiniteScrollEntity image"/>
+                        </a>
+                        {{fieldTestInfiniteScrollEntity.byteImageHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteImageHugo)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Image Required Hugo</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestInfiniteScrollEntity.byteImageRequiredHugo">
+                        <a (click)="openFile(fieldTestInfiniteScrollEntity.byteImageRequiredHugoContentType, fieldTestInfiniteScrollEntity.byteImageRequiredHugo)">
+                            <img [src]="'data:' + fieldTestInfiniteScrollEntity.byteImageRequiredHugoContentType + ';base64,' + fieldTestInfiniteScrollEntity.byteImageRequiredHugo" style="max-width: 100%;" alt="fieldTestInfiniteScrollEntity image"/>
+                        </a>
+                        {{fieldTestInfiniteScrollEntity.byteImageRequiredHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteImageRequiredHugo)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Image Minbytes Hugo</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestInfiniteScrollEntity.byteImageMinbytesHugo">
+                        <a (click)="openFile(fieldTestInfiniteScrollEntity.byteImageMinbytesHugoContentType, fieldTestInfiniteScrollEntity.byteImageMinbytesHugo)">
+                            <img [src]="'data:' + fieldTestInfiniteScrollEntity.byteImageMinbytesHugoContentType + ';base64,' + fieldTestInfiniteScrollEntity.byteImageMinbytesHugo" style="max-width: 100%;" alt="fieldTestInfiniteScrollEntity image"/>
+                        </a>
+                        {{fieldTestInfiniteScrollEntity.byteImageMinbytesHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteImageMinbytesHugo)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Image Maxbytes Hugo</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo">
+                        <a (click)="openFile(fieldTestInfiniteScrollEntity.byteImageMaxbytesHugoContentType, fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo)">
+                            <img [src]="'data:' + fieldTestInfiniteScrollEntity.byteImageMaxbytesHugoContentType + ';base64,' + fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo" style="max-width: 100%;" alt="fieldTestInfiniteScrollEntity image"/>
+                        </a>
+                        {{fieldTestInfiniteScrollEntity.byteImageMaxbytesHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Hugo</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestInfiniteScrollEntity.byteAnyHugo">
+                        <a (click)="openFile(fieldTestInfiniteScrollEntity.byteAnyHugoContentType, fieldTestInfiniteScrollEntity.byteAnyHugo)">open</a>
+                        {{fieldTestInfiniteScrollEntity.byteAnyHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteAnyHugo)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Required Hugo</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestInfiniteScrollEntity.byteAnyRequiredHugo">
+                        <a (click)="openFile(fieldTestInfiniteScrollEntity.byteAnyRequiredHugoContentType, fieldTestInfiniteScrollEntity.byteAnyRequiredHugo)">open</a>
+                        {{fieldTestInfiniteScrollEntity.byteAnyRequiredHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteAnyRequiredHugo)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Minbytes Hugo</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo">
+                        <a (click)="openFile(fieldTestInfiniteScrollEntity.byteAnyMinbytesHugoContentType, fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo)">open</a>
+                        {{fieldTestInfiniteScrollEntity.byteAnyMinbytesHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Any Maxbytes Hugo</span></dt>
+                <dd>
+                    <div *ngIf="fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo">
+                        <a (click)="openFile(fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugoContentType, fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo)">open</a>
+                        {{fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugoContentType}}, {{byteSize(fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo)}}
+                    </div>
+                </dd>
+                <dt><span>Byte Text Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.byteTextHugo}}</span>
+                </dd>
+                <dt><span>Byte Text Required Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.byteTextRequiredHugo}}</span>
+                </dd>
+                <dt><span>Byte Text Minbytes Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.byteTextMinbytesHugo}}</span>
+                </dd>
+                <dt><span>Byte Text Maxbytes Hugo</span></dt>
+                <dd>
+                    <span>{{fieldTestInfiniteScrollEntity.byteTextMaxbytesHugo}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/field-test-infinite-scroll-entity', fieldTestInfiniteScrollEntity.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

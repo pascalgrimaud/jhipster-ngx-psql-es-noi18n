@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity TestTwoRelationshipsSameEntity.
+    -->
+    <changeSet id="20160208210109-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="first_relationship_id"
+                                 baseTableName="test_multiple_rel"
+                                 constraintName="fk_test_two_relationships_same_entity_first_relationship_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_entity"/>
+
+        <addForeignKeyConstraint baseColumnNames="second_relationship_id"
+                                 baseTableName="test_multiple_rel"
+                                 constraintName="fk_test_two_relationships_same_entity_second_relationship_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="test_entity"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_one_id"
+                                 baseTableName="test_multiple_rel"
+                                 constraintName="fk_test_two_relationships_same_entity_user_one_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_two_id"
+                                 baseTableName="test_multiple_rel"
+                                 constraintName="fk_test_two_relationships_same_entity_user_two_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="first_unique_required_relation_id"
+                                 baseTableName="test_multiple_rel"
+                                 constraintName="fk_test_two_relationships_same_entity_first_unique_required_relation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="division"/>
+
+        <addForeignKeyConstraint baseColumnNames="second_unique_required_relation_id"
+                                 baseTableName="test_multiple_rel"
+                                 constraintName="fk_test_two_relationships_same_entity_second_unique_required_relation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="division"/>
+
+    </changeSet>
+</databaseChangeLog>

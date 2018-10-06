@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="testCustomTableName">
+            <h2><span>Test Custom Table Name</span> {{testCustomTableName.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Test Entity</span></dt>
+                <dd>
+                    <div *ngIf="testCustomTableName.testEntity">
+                        <a [routerLink]="['/test-entity-my-suffix-alt', testCustomTableName.testEntity?.id, 'view']">{{testCustomTableName.testEntity?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>User One To Many</span></dt>
+                <dd>
+                    {{testCustomTableName.userOneToMany?.login}}
+                </dd>
+                <dt><span>User Many To Many</span></dt>
+                <dd>
+                    <span *ngFor="let userManyToMany of testCustomTableName.userManyToManies; let last = last">
+                        {{userManyToMany.login}}{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>User One To One</span></dt>
+                <dd>
+                    {{testCustomTableName.userOneToOne?.login}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/test-custom-table-name', testCustomTableName.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
