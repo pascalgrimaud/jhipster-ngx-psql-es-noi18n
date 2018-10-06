@@ -1,0 +1,34 @@
+jobs:
+- job: Test
+  pool:
+    vmImage: 'Ubuntu 16.04'
+  variables:
+    NODE_VERSION: 8.12.0
+    SPRING_OUTPUT_ANSI_ENABLED: NEVER
+    SPRING_JPA_SHOW_SQL: false
+
+  steps:
+  #----------------------------------------------------------------------
+  # Install all tools and check configuration
+  #----------------------------------------------------------------------
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '8.12.0'
+    displayName: 'TOOLS: install Node.js'
+  - script: sudo npm install -g npm
+    displayName: 'TOOLS: update NPM'
+  - script: sudo /etc/init.d/mysql stop
+    displayName: 'TOOLS: stop MySQL'
+  #----------------------------------------------------------------------
+  # Tests
+  #----------------------------------------------------------------------
+  - script: npm install
+    displayName: 'INSTALL: launch npm install'
+  - script: |
+      chmod +x mvnw
+      ./mvnw clean test
+    displayName: 'TESTS: backend'
+  - script: npm test -- -u
+    displayName: 'TESTS: frontend'
+  - script: ./mvnw verify -Pprod -DskipTests
+    displayName: 'TESTS: packaging'
